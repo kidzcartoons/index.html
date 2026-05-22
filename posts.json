@@ -1,0 +1,75 @@
+[
+  {
+    "slug": "lord-of-mysteries-s01",
+    "title": "Lord Of Mysteries S01",
+    "category": "Anime",
+    "tags": ["Hindi Dub", "Amazon Prime", "Mystery"],
+    "summary": "A Victorian supernatural anime adventure filled with mystery, powers, and hidden organizations.",
+    "image": "https://i.postimg.cc/d0dCvwcX/Lord-of-Mysteries-(1).webp",
+    "banner": "https://i.postimg.cc/d0dCvwcX/Lord-of-Mysteries-(1).webp",
+    "author": "Kidz Cartoons Hub",
+    "date": "2026-05-22",
+    "views": 12500,
+    "featured": true,
+    "details": {
+      "Season": "01",
+      "Language": "Hindi Dub",
+      "Quality": "1080p WEB-DL",
+      "Genre": "Action, Adventure, Fantasy",
+      "OTT": "Amazon Prime Video"
+    },
+    "content": "Zhou Mingrui wakes up in a Victorian-style world as Klein Moretti, where steam technology, divination, potions, and supernatural powers shape a dangerous hidden society.\n\nAs he rises through mysterious abilities and secret organizations, he uncovers a conspiracy that threatens the world.",
+    "downloadLinks": [
+      { "label": "Google Drive - Watch/Download", "url": "https://example.com/drive-lord-of-mysteries" },
+      { "label": "Mega - Watch/Download", "url": "https://example.com/mega-lord-of-mysteries" }
+    ]
+  },
+  {
+    "slug": "detective-conan-the-lost-case",
+    "title": "Detective Conan: The Lost Case",
+    "category": "Anime",
+    "tags": ["Mystery", "Detective", "Subtitles"],
+    "summary": "A new adventure for Conan where every clue brings him closer to the truth.",
+    "image": "https://images.unsplash.com/photo-1542204165-7b6d5ea2c857?auto=format&fit=crop&w=1200&q=80",
+    "banner": "https://images.unsplash.com/photo-1542204165-7b6d5ea2c857?auto=format&fit=crop&w=1200&q=80",
+    "author": "Kidz Cartoons Hub",
+    "date": "2026-05-12",
+    "views": 8420,
+    "featured": true,
+    "details": {
+      "Episode": "SPECIAL",
+      "Language": "English Sub",
+      "Quality": "1080p HD",
+      "Genre": "Crime, Mystery, Action",
+      "OTT": "Crunchyroll"
+    },
+    "content": "Conan Edogawa returns in a gripping special where a missing artifact hides a dangerous secret.\n\nWith each clue, the stakes grow higher, and only the world's greatest young detective can solve the lost case.",
+    "downloadLinks": [
+      { "label": "Crunchyroll - Watch Now", "url": "https://example.com/crunchyroll-detective-conan" }
+    ]
+  },
+  {
+    "slug": "tom-and-jerry-classic-collection",
+    "title": "Tom & Jerry Classic Collection",
+    "category": "Cartoons",
+    "tags": ["Classic", "Kids", "Comedy"],
+    "summary": "The timeless chase continues with a fresh collection of cartoons for kids and families.",
+    "image": "https://images.unsplash.com/photo-1495653797063-114787b77b6f?auto=format&fit=crop&w=1200&q=80",
+    "banner": "https://images.unsplash.com/photo-1495653797063-114787b77b6f?auto=format&fit=crop&w=1200&q=80",
+    "author": "Kidz Cartoons Hub",
+    "date": "2026-04-28",
+    "views": 10320,
+    "featured": false,
+    "details": {
+      "Type": "Cartoon Series",
+      "Language": "English",
+      "Quality": "720p WEB",
+      "Genre": "Comedy, Family",
+      "OTT": "Amazon Prime Video"
+    },
+    "content": "Tom and Jerry return in a funny collection of classic chases, tricks, and cartoon chaos.\n\nEnjoy more than a dozen episodes designed for children and families who love bright animation and laughter.",
+    "downloadLinks": [
+      { "label": "Amazon Prime Video - Watch", "url": "https://example.com/amazon-tom-jerry" }
+    ]
+  }
+]

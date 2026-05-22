@@ -3,472 +3,454 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atoz Cartoons Premium</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Kidz Cartoons Hub</title>
+  <link rel="icon" href="https://i.postimg.cc/02NYDg6G/cartoon-favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{background:#0a0a0a;color:#e8e8e8;font-family:Segoe UI,Tahoma,Verdana,sans-serif}
-    a{text-decoration:none;color:inherit}
-    .header{
-      position:sticky;top:0;z-index:9999;
-      background:linear-gradient(135deg,#161616,#0d0d0d);
-      border-bottom:1px solid #272727;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:14px 15px;
+    :root {
+      color-scheme: dark;
+      --bg: #090909;
+      --surface: #121212;
+      --surface-strong: #1d1d1d;
+      --border: #272727;
+      --text: #f2f2f2;
+      --text-muted: #b2b2b2;
+      --accent: #ff4d5a;
+      --accent-soft: rgba(255,77,90,0.18);
+      --shadow: 0 18px 45px rgba(0,0,0,0.24);
     }
-    .logo{display:flex;align-items:center;gap:10px;color:#ff4757;font-weight:800;font-size:20px}
-    .logo i{font-size:22px}
-    .menu-btn{font-size:24px;color:#fff;cursor:pointer}
-    .search-wrap{
-      position:sticky;top:62px;z-index:9998;
-      background:#111;padding:12px 15px;border-bottom:1px solid #222;
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(circle at top, #121212 0%, #090909 45%, #050505 100%);
+      color: var(--text);
+      line-height: 1.6;
     }
-    .search-box{
-      max-width:1200px;margin:auto;position:relative;
-      border:1px solid #2d2d2d;border-radius:999px;overflow:hidden;
-      transition:.25s;
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .page-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px;
     }
-    .search-box:focus-within{box-shadow:0 0 18px rgba(255,71,87,.25);border-color:#ff4757}
-    .search-box input{
-      width:100%;padding:14px 48px 14px 18px;border:0;outline:0;
-      background:#0d0d0d;color:#fff;font-size:15px
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 12px;
+      border: 1px solid rgba(255,255,255,0.05);
+      background: rgba(17,17,17,0.9);
+      backdrop-filter: blur(18px);
+      border-radius: 18px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
     }
-    .search-box i{position:absolute;right:18px;top:50%;transform:translateY(-50%);color:#ff4757}
-    .hero{
-      max-width:1200px;margin:18px auto 0;padding:0 15px;
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
     }
-    .hero-card{
-      background:linear-gradient(145deg,#1a1a1a,#111);
-      border:1px solid #292929;border-radius:18px;overflow:hidden;
-      box-shadow:0 10px 30px rgba(0,0,0,.25)
+
+    .brand i { color: var(--accent); }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
-    .hero-slider{position:relative;overflow:hidden}
-    .hero-track{display:flex;transition:transform .45s ease}
-    .hero-slide{min-width:100%;position:relative}
-    .hero-slide img{width:100%;height:220px;object-fit:cover;display:block}
-    .hero-slide .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.15))}
-    .hero-content{position:absolute;left:0;right:0;bottom:0;padding:18px}
-    .hero-content h1{font-size:22px;color:#fff;margin-bottom:8px}
-    .hero-content p{color:#b7b7b7;line-height:1.8;font-size:14px}
-    .hero-dots{display:flex;gap:8px;justify-content:center;padding:12px 0 14px}
-    .dot{width:9px;height:9px;border-radius:50%;background:#333;cursor:pointer}
-    .dot.active{background:#ff4757}
-    .container{max-width:1200px;margin:auto;padding:15px}
-    .section-title{
-      margin:24px 0 14px;font-size:22px;font-weight:700;
-      border-left:4px solid #ff4757;padding-left:12px;
-      display:flex;align-items:center;gap:10px
+
+    .button, .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: none;
+      border-radius: 999px;
+      padding: 11px 16px;
+      background: linear-gradient(135deg, rgba(255,77,90,0.14), rgba(255,77,90,0.05));
+      color: var(--text);
+      cursor: pointer;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-    .card{
-      background:linear-gradient(145deg,#1b1b1b,#121212);
-      border:1px solid #282828;border-radius:14px;overflow:hidden;
-      transition:.25s;cursor:pointer
+
+    .button:hover, .pill:hover { transform: translateY(-2px); background: rgba(255,77,90,0.18); }
+    .button.primary { background: linear-gradient(135deg, #ff5774, #ff3b5a); color: white; }
+
+    .hero {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 22px;
     }
-    .card:hover{transform:translateY(-6px);border-color:#ff4757;box-shadow:0 10px 26px rgba(255,71,87,.25)}
-    .card img{width:100%;height:270px;object-fit:cover;display:block}
-    .card-info{padding:13px}
-    .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-    .tag{
-      display:inline-block;padding:5px 9px;border-radius:6px;
-      background:#ff4757;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase
+
+    .hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: linear-gradient(180deg, rgba(255,77,90,0.12), rgba(7,7,7,0.98));
+      min-height: 320px;
+      box-shadow: var(--shadow);
     }
-    .card h3{font-size:15px;line-height:1.4;height:42px;overflow:hidden;color:#fff}
-    .view-btn{
-      margin-top:10px;background:linear-gradient(45deg,#ff4757,#ff6b57);
-      text-align:center;color:#fff;padding:11px;border-radius:8px;font-weight:700
+
+    .hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.05);
     }
-    .tabs{
-      display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 8px
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(0,0,0,0.82));
     }
-    .tab{
-      background:#171717;border:1px solid #2b2b2b;color:#fff;
-      padding:10px 14px;border-radius:999px;font-size:13px;cursor:pointer;
-      transition:.2s;text-transform:uppercase
+
+    .hero-copy {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      display: grid;
+      gap: 12px;
+      color: white;
     }
-    .tab:hover,.tab.active{background:#ff4757;border-color:#ff4757}
-    .submenu-row{
-      display:none;gap:10px;flex-wrap:wrap;margin:10px 0 4px
+
+    .hero-copy small {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      opacity: 0.78;
+      letter-spacing: 0.12em;
     }
-    .submenu-row.active{display:flex}
-    .submenu{
-      background:#141414;border:1px solid #2a2a2a;color:#ddd;
-      padding:9px 13px;border-radius:999px;font-size:12px;cursor:pointer
+
+    .hero-copy h1 {
+      font-size: clamp(2rem, 2.6vw, 3.2rem);
+      line-height: 1.02;
+      max-width: 770px;
     }
-    .submenu:hover{border-color:#ff4757;color:#ff4757}
-    .coming-soon{text-align:center;color:#9c9c9c;padding:28px 10px;font-size:15px}
-    .pagination{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:22px 0 0}
-    .page-link{
-      padding:10px 14px;border-radius:10px;border:1px solid #2b2b2b;
-      background:#171717;color:#fff;min-width:42px;text-align:center
+
+    .hero-copy p {
+      color: rgba(255,255,255,0.84);
+      max-width: 620px;
+      font-size: 0.99rem;
     }
-    .page-link.active{background:#ff4757;border-color:#ff4757}
-    .social-box{max-width:1200px;margin:30px auto 0;padding:0 15px}
-    .social-inner{
-      background:linear-gradient(145deg,#171717,#101010);
-      border:1px solid #2a2a2a;border-radius:16px;padding:18px;text-align:center
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
     }
-    .social-inner h2{color:#ff4757;margin-bottom:14px;font-size:20px}
-    .social-icons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-    .social-icons a{
-      width:46px;height:46px;border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      background:#1f1f1f;border:1px solid #2d2d2d;color:#fff;
-      font-size:18px;transition:.2s
+
+    .search-bar input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      outline: none;
+      font-size: 1rem;
     }
-    .social-icons a:hover{transform:translateY(-3px);border-color:#ff4757;color:#ff4757}
-    .join-telegram{max-width:1200px;margin:18px auto 0;padding:0 15px}
-    .join-telegram .box{
-      background:linear-gradient(45deg,#1089ff,#2f9bff);
-      color:#fff;border-radius:16px;padding:18px;text-align:center;
-      font-weight:800;box-shadow:0 8px 22px rgba(16,137,255,.25);cursor:pointer
+
+    .search-bar i { color: var(--accent); font-size: 1.05rem; }
+
+    .category-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
     }
-    .footer{
-      margin-top:26px;background:linear-gradient(135deg,#111,#0a0a0a);
-      border-top:2px solid #ff4757;padding:22px 15px 26px;text-align:center
+
+    .category-pill {
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.93rem;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      white-space: nowrap;
     }
-    .footer p{color:#a0a0a0;font-size:14px;line-height:1.8}
-    .footer .copyright{color:#ff4757;font-weight:800;margin-top:8px}
-    .hidden{display:none!important}
-    @media(min-width:700px){
-      .grid{grid-template-columns:repeat(4,1fr)}
-      .hero-slide img{height:300px}
-      .card img{height:250px}
+
+    .category-pill.active {
+      border-color: var(--accent);
+      background: rgba(255,77,90,0.16);
+      color: white;
+    }
+
+    .category-pill:hover { transform: translateY(-1px); }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+      gap: 18px;
+    }
+
+    .post-card {
+      display: grid;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .post-card:hover { transform: translateY(-4px); border-color: rgba(255,77,90,0.25); }
+
+    .post-card img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .post-card-body {
+      display: grid;
+      gap: 12px;
+      padding: 18px;
+    }
+
+    .post-card-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .post-card-header .tag { background: rgba(255,77,90,0.14); color: #ffd8dc; padding: 6px 12px; border-radius: 999px; }
+    .post-card-title { font-size: 1.05rem; font-weight: 700; line-height: 1.3; }
+    .post-card-summary { color: var(--text-muted); min-height: 64px; }
+
+    .post-card-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 4px;
+      font-size: 0.88rem;
+    }
+
+    .post-card-meta span { color: rgba(255,255,255,0.72); }
+
+    .post-card-link {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 11px 14px;
+      background: var(--accent);
+      color: white;
+      font-weight: 700;
+    }
+
+    .post-card-link i { margin-left: 8px; }
+
+    .footer {
+      margin-top: 40px;
+      padding: 24px 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .footer a { color: var(--accent); }
+
+    .empty-state {
+      display: grid;
+      place-items: center;
+      padding: 80px 0;
+      color: var(--text-muted);
+    }
+
+    @media (min-width: 900px) {
+      .hero { grid-template-columns: 1.2fr 0.8fr; }
     }
   </style>
 </head>
 <body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand"><i class="fas fa-film"></i> Kidz Cartoons Hub</div>
+      <div class="nav-actions">
+        <a class="button primary" href="editor.html"><i class="fas fa-pencil-alt"></i> Create Post</a>
+        <a class="button" href="#posts"><i class="fas fa-th-large"></i> View All</a>
+      </div>
+    </header>
 
-  <div class="header">
-    <a class="logo" href="/">
-      <i class="fas fa-play-circle"></i> Atoz Cartoons Premium
-    </a>
-    <div class="menu-btn" onclick="scrollToSection('categories')"><i class="fas fa-bars"></i></div>
-  </div>
+    <section class="hero" aria-label="Featured posts">
+      <article class="hero-card" id="heroCard">
+        <div class="hero-overlay"></div>
+        <img id="heroImage" src="" alt="Featured post image" />
+        <div class="hero-copy">
+          <small id="heroCategory">Anime</small>
+          <h1 id="heroTitle">Loading featured story...</h1>
+          <p id="heroSummary">The latest anime and cartoon hits, refreshed for your audience.</p>
+          <div class="hero-actions">
+            <a class="button primary" id="heroButton" href="#">Read post</a>
+            <a class="button" href="#posts"><i class="fas fa-heart"></i> Explore more</a>
+          </div>
+        </div>
+      </article>
+    </section>
 
-  <div class="search-wrap">
-    <div class="search-box">
-      <input id="searchInput" type="text" placeholder="Search posts...">
+    <section class="search-bar" aria-label="Search posts">
       <i class="fas fa-search"></i>
-    </div>
-  </div>
+      <input id="searchInput" type="search" placeholder="Search titles, categories or tags..." aria-label="Search posts" />
+    </section>
 
-  <div class="hero" id="heroSection">
-    <div class="hero-card">
-      <div class="hero-slider">
-        <div class="hero-track" id="heroTrack"></div>
-      </div>
-      <div class="hero-dots" id="heroDots"></div>
-    </div>
-  </div>
+    <section class="category-row" aria-label="Post categories" id="categoryRow"></section>
 
-  <div class="container" id="categories">
-    <div class="section-title"><i class="fas fa-layer-group"></i> CATEGORIES</div>
-    <div class="tabs">
-      <div class="tab active" onclick="showMain('home', this)">HOME</div>
-      <div class="tab" onclick="showMain('cartoons', this)">CARTOONS</div>
-      <div class="tab" onclick="showMain('anime', this)">ANIME</div>
-      <div class="tab" onclick="showMain('movies', this)">MOVIES</div>
-      <div class="tab" onclick="showMain('tvrips', this)">TV RIPS</div>
-      <div class="tab" onclick="showMain('ott', this)">OTT NETWORK</div>
-      <div class="tab" onclick="showMain('contact', this)">CONTACT US</div>
-      <div class="tab" onclick="showMain('dmca', this)">DMCA</div>
-    </div>
-
-    <div id="submenu-cartoons" class="submenu-row">
-      <div class="submenu" onclick="comingSoon()">HINDI DUB</div>
-      <div class="submenu" onclick="comingSoon()">ENG DUB</div>
-    </div>
-    <div id="submenu-anime" class="submenu-row">
-      <div class="submenu" onclick="filterByTag('HINDI DUB')">HINDI DUB</div>
-      <div class="submenu" onclick="filterByTag('ENG SUB')">ENG SUB</div>
-    </div>
-    <div id="submenu-movies" class="submenu-row">
-      <div class="submenu" onclick="comingSoon()">ANIMATED MOVIES</div>
-      <div class="submenu" onclick="comingSoon()">ANIME MOVIES</div>
-    </div>
-    <div id="submenu-tvrips" class="submenu-row">
-      <div class="submenu" onclick="filterByTag('TATAPLAY')">TATAPLAY</div>
-      <div class="submenu" onclick="filterByTag('JIOTV')">JIOTV</div>
-      <div class="submenu" onclick="filterByTag('AIRTEL XSTREAM')">AIRTEL XSTREAM</div>
-      <div class="submenu" onclick="filterByTag('DISH TV')">DISH TV</div>
-      <div class="submenu" onclick="filterByTag('SUNTV')">SUNTV</div>
-    </div>
-    <div id="submenu-ott" class="submenu-row">
-      <div class="submenu" onclick="filterByTag('Amazon Prime Video')">Amazon Prime Video</div>
-      <div class="submenu" onclick="filterByTag('Netflix')">Netflix</div>
-      <div class="submenu" onclick="filterByTag('SonyLiv')">SonyLiv</div>
-      <div class="submenu" onclick="filterByTag('MX Player')">MX Player</div>
-      <div class="submenu" onclick="filterByTag('JioCinema')">JioCinema</div>
-      <div class="submenu" onclick="filterByTag('VootKids')">VootKids</div>
-      <div class="submenu" onclick="filterByTag('YouTube')">YouTube</div>
-      <div class="submenu" onclick="filterByTag('JioHotstar')">JioHotstar</div>
-      <div class="submenu" onclick="filterByTag('Disney+')">Disney+</div>
-      <div class="submenu" onclick="filterByTag('Crunchyroll')">Crunchyroll</div>
-      <div class="submenu" onclick="filterByTag('Discovery Plus')">Discovery Plus</div>
-      <div class="submenu" onclick="filterByTag('Apple Tv+')">Apple Tv+</div>
-      <div class="submenu" onclick="filterByTag('ZEE5')">ZEE5</div>
-      <div class="submenu" onclick="filterByTag('Waves')">Waves</div>
-    </div>
-
-    <div id="main-home">
-      <div class="section-title"><i class="fas fa-fire"></i> LATEST POSTS</div>
-      <div class="grid" id="postGrid"></div>
-      <div class="coming-soon" id="noResults" style="display:none">No results found 😢</div>
-      <div class="pagination" id="pagination"></div>
-    </div>
-
-    <div id="main-contact" style="display:none">
-      <div class="section-title"><i class="fas fa-envelope"></i> CONTACT US</div>
-      <div class="card" style="cursor:default">
-        <div class="card-info">
-          <p style="line-height:1.9;color:#cfcfcf">Email: syedzaidjavaid@gmail.com</p>
-          <p style="line-height:1.9;color:#cfcfcf">Telegram: @AtozCartoonsPremium</p>
+    <section id="posts">
+      <div class="posts-grid" id="postsGrid"></div>
+      <div class="empty-state hidden" id="emptyState">
+        <div>
+          <h2>No posts found</h2>
+          <p>Try another search term or choose a different category.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="main-dmca" style="display:none">
-      <div class="section-title"><i class="fas fa-shield-alt"></i> DMCA</div>
-      <div class="card" style="cursor:default">
-        <div class="card-info">
-          <p style="line-height:1.9;color:#cfcfcf">Atoz Cartoons Premium respects intellectual property rights. If you believe content on this site violates your copyright, contact us with the required details and we will review the request.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="social-box">
-    <div class="social-inner">
-      <h2>SOCIAL MEDIA</h2>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/AtozCartoonsPremium" target="_blank" rel="noopener noreferrer" title="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://youtube.com/@EditXZaid" target="_blank" rel="noopener noreferrer" title="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://pin.it/6gZ5JE5XZ" target="_blank" rel="noopener noreferrer" title="Pinterest">
-          <i class="fab fa-pinterest-p"></i>
-        </a>
-        <a href="https://t.me/+yt1dK4iKsR44ZTU0" target="_blank" rel="noopener noreferrer" title="Telegram">
-          <i class="fab fa-telegram-plane"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="join-telegram">
-    <div class="box" onclick="window.open('https://t.me/+yt1dK4iKsR44ZTU0','_blank')">
-      <i class="fab fa-telegram-plane"></i> JOIN US ON TELEGRAM
-    </div>
-  </div>
-
-  <div class="footer">
-    <p>Atoz Cartoons Premium - Premium Cartoons, Anime, Movies & OTT Collection</p>
-    <p class="copyright">© <span id="copyrightYear"></span> Atoz Cartoons Premium. All Rights Reserved.</p>
+    <footer class="footer">
+      <p>Made for cartoons and anime fans. Add new posts using the editor, update <code>posts.json</code>, and each story will have its own page.</p>
+      <p>Want a live site? Host this folder on GitHub Pages or any static file server.</p>
+    </footer>
   </div>
 
   <script>
-    document.getElementById('copyrightYear').textContent = new Date().getFullYear();
-
+    const postsPath = 'posts.json';
+    const categoryRow = document.getElementById('categoryRow');
+    const postsGrid = document.getElementById('postsGrid');
     const searchInput = document.getElementById('searchInput');
-    const postGrid = document.getElementById('postGrid');
-    const noResults = document.getElementById('noResults');
-    const heroTrack = document.getElementById('heroTrack');
-    const heroDots = document.getElementById('heroDots');
-    const heroSection = document.getElementById('heroSection');
-    const pagination = document.getElementById('pagination');
+    const emptyState = document.getElementById('emptyState');
+    const heroImage = document.getElementById('heroImage');
+    const heroCategory = document.getElementById('heroCategory');
+    const heroTitle = document.getElementById('heroTitle');
+    const heroSummary = document.getElementById('heroSummary');
+    const heroButton = document.getElementById('heroButton');
 
-    let allPosts = [];
-    let heroPosts = [];
-    let heroIndex = 0;
-    let heroTimer = null;
-    let filteredPosts = [];
+    let posts = [];
+    let activeCategory = 'All';
+    let featuredPosts = [];
+    let currentHero = 0;
+
+    const categories = ['All', 'Anime', 'Cartoons', 'Movies', 'Popular'];
 
     function slugify(text) {
-      return (text || '').toLowerCase().trim()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/(^-|-$)+/g, '');
+      return text.toString().toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
     }
 
-    function normalizeText(text) {
-      return (text || '').toLowerCase().trim().replace(/s+/g, ' ');
-    }
+    function buildCategories() {
+      categoryRow.innerHTML = categories.map(category => {
+        const activeClass = category === activeCategory ? 'active' : '';
+        return `<button class="category-pill ${activeClass}" type="button" data-category="${category}">${category}</button>`;
+      }).join('');
 
-    function scrollToSection(id){
-      const el = document.getElementById(id);
-      if (el) el.scrollIntoView({behavior:'smooth'});
-    }
-
-    function closeAllSubmenus(){
-      document.querySelectorAll('.submenu-row').forEach(x=>x.classList.remove('active'));
-    }
-
-    function showMain(which, el){
-      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-      if(el) el.classList.add('active');
-      closeAllSubmenus();
-      ['main-home','main-contact','main-dmca'].forEach(id=>{
-        const node = document.getElementById(id);
-        if(node) node.style.display='none';
+      categoryRow.querySelectorAll('.category-pill').forEach(button => {
+        button.addEventListener('click', () => {
+          activeCategory = button.dataset.category;
+          buildCategories();
+          renderPosts();
+        });
       });
-      if(which==='home') document.getElementById('main-home').style.display='block';
-      if(which==='contact') document.getElementById('main-contact').style.display='block';
-      if(which==='dmca') document.getElementById('main-dmca').style.display='block';
-      if(which==='cartoons') document.getElementById('submenu-cartoons').classList.add('active');
-      if(which==='anime') document.getElementById('submenu-anime').classList.add('active');
-      if(which==='movies') document.getElementById('submenu-movies').classList.add('active');
-      if(which==='tvrips') document.getElementById('submenu-tvrips').classList.add('active');
-      if(which==='ott') document.getElementById('submenu-ott').classList.add('active');
-      searchInput.value = '';
-      filteredPosts = [...allPosts];
-      renderPage(1);
     }
 
-    function comingSoon(){alert('Coming Soon!')}
-
-    function createCard(post){
-      const slug = post.slug || slugify(post.title);
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <img src="${post.image || ''}" alt="${post.title || ''}">
-        <div class="card-info">
-          <div class="tag-row">
-            ${(post.category ? `<span class="tag">${post.category}</span>` : '')}
-            ${(Array.isArray(post.tags) ? post.tags : []).slice(0,2).map(t => `<span class="tag">${t}</span>`).join('')}
-          </div>
-          <h3>${post.title || ''}</h3>
-          <div class="view-btn">VIEW DETAILS</div>
-        </div>
-      `;
-      card.onclick = () => window.location.href = `post.html?slug=${slug}`;
-      return card;
+    function renderHero() {
+      if (!featuredPosts.length) return;
+      const post = featuredPosts[currentHero];
+      heroImage.src = post.banner || post.image;
+      heroImage.alt = post.title;
+      heroCategory.textContent = post.category;
+      heroTitle.textContent = post.title;
+      heroSummary.textContent = post.summary;
+      heroButton.href = `post.html?slug=${encodeURIComponent(post.slug)}`;
+      heroButton.textContent = `Read ${post.category}`;
     }
 
-    function getPage(){
-      const p = new URLSearchParams(window.location.search).get('page');
-      const n = parseInt(p || '1', 10);
-      return Number.isFinite(n) && n > 0 ? n : 1;
+    function cycleHero() {
+      currentHero = (currentHero + 1) % featuredPosts.length;
+      renderHero();
     }
 
-    function renderPage(page){
-      const perPage = 12;
-      const total = filteredPosts.length;
-      const totalPages = Math.max(1, Math.ceil(total / perPage));
-      const safePage = Math.min(page, totalPages);
-      const start = (safePage - 1) * perPage;
-      const items = filteredPosts.slice(start, start + perPage);
+    function getFilteredPosts() {
+      const query = searchInput.value.trim().toLowerCase();
+      return posts.filter(post => {
+        if (activeCategory !== 'All' && post.category !== activeCategory) return false;
+        if (!query) return true;
+        return [post.title, post.summary, post.category, post.tags.join(' ')].some(value => value.toLowerCase().includes(query));
+      });
+    }
 
-      postGrid.innerHTML = '';
-      items.forEach(post => postGrid.appendChild(createCard(post)));
-      noResults.style.display = items.length ? 'none' : 'block';
+    function renderPosts() {
+      const filtered = getFilteredPosts();
+      postsGrid.innerHTML = filtered.map(post => {
+        return `
+          <article class="post-card">
+            <a href="post.html?slug=${encodeURIComponent(post.slug)}">
+              <img src="${post.image}" alt="${post.title}" loading="lazy" />
+            </a>
+            <div class="post-card-body">
+              <div class="post-card-header">
+                <span>${post.date}</span>
+                <span class="tag">${post.category}</span>
+              </div>
+              <a href="post.html?slug=${encodeURIComponent(post.slug)}" class="post-card-title">${post.title}</a>
+              <p class="post-card-summary">${post.summary}</p>
+              <div class="post-card-meta">
+                <span>${post.tags.join(' · ')}</span>
+                <span>${post.views.toLocaleString()} views</span>
+              </div>
+              <a class="post-card-link" href="post.html?slug=${encodeURIComponent(post.slug)}">Open story <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </article>`;
+      }).join('');
 
-      pagination.innerHTML = '';
-      if (totalPages > 1) {
-        for (let i = 1; i <= totalPages; i++) {
-          const a = document.createElement('a');
-          a.className = 'page-link' + (i === safePage ? ' active' : '');
-          a.href = i === 1 ? '/' : `/?page=${i}`;
-          a.textContent = i;
-          pagination.appendChild(a);
-        }
+      emptyState.classList.toggle('hidden', filtered.length > 0);
+    }
+
+    async function loadPosts() {
+      try {
+        const response = await fetch(postsPath);
+        posts = await response.json();
+        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+        featuredPosts = posts.filter(post => post.featured).slice(0, 4);
+        buildCategories();
+        renderHero();
+        renderPosts();
+        if (featuredPosts.length > 1) setInterval(cycleHero, 6200);
+      } catch (error) {
+        postsGrid.innerHTML = '<div class="empty-state"><p>Unable to load posts.</p></div>';
+        console.error(error);
       }
     }
 
-    function filterByTag(tag){
-      closeAllSubmenus();
-      ['main-home','main-contact','main-dmca'].forEach(id=>{
-        const node = document.getElementById(id);
-        if(node) node.style.display='none';
-      });
-      document.getElementById('main-home').style.display='block';
-
-      const target = normalizeText(tag);
-      filteredPosts = allPosts.filter(p => {
-        const tags = Array.isArray(p.tags) ? p.tags : [];
-        const category = normalizeText(p.category);
-        return tags.some(t => normalizeText(t) === target) || category === target;
-      });
-
-      renderPage(1);
-    }
-
-    searchInput.addEventListener('input', ()=>{
-      const q = searchInput.value.toLowerCase().trim();
-      filteredPosts = allPosts.filter(post => {
-        const t = (post.title || '').toLowerCase();
-        const tags = (Array.isArray(post.tags) ? post.tags : []).join(' ').toLowerCase();
-        const cat = (post.category || '').toLowerCase();
-        return !q || t.includes(q) || tags.includes(q) || cat.includes(q);
-      });
-      renderPage(1);
-    });
-
-    function setupHero(posts){
-      heroPosts = (posts || []).sort((a,b) => (b.views || 0) - (a.views || 0)).slice(0,6);
-      heroTrack.innerHTML = '';
-      heroDots.innerHTML = '';
-
-      if (!heroPosts.length || getPage() !== 1) {
-        heroSection.classList.add('hidden');
-        return;
-      }
-
-      heroSection.classList.remove('hidden');
-
-      heroPosts.forEach((post, i) => {
-        const slug = post.slug || slugify(post.title);
-        const slide = document.createElement('div');
-        slide.className = 'hero-slide';
-        slide.innerHTML = `
-          <img src="${post.image || ''}" alt="${post.title || ''}">
-          <div class="overlay"></div>
-          <div class="hero-content">
-            <h1>${post.title || 'Latest Post'}</h1>
-            <p>${((post.story || '') + '').slice(0,120)}...</p>
-          </div>
-        `;
-        slide.onclick = () => window.location.href = `post.html?slug=${slug}`;
-        heroTrack.appendChild(slide);
-
-        const dot = document.createElement('span');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.onclick = () => goHero(i);
-        heroDots.appendChild(dot);
-      });
-
-      goHero(0);
-      clearInterval(heroTimer);
-      if (heroPosts.length > 1) {
-        heroTimer = setInterval(() => goHero((heroIndex + 1) % heroPosts.length), 4000);
-      }
-    }
-
-    function goHero(index){
-      if(!heroPosts.length) return;
-      heroIndex = index;
-      heroTrack.style.transform = `translateX(-${index * 100}%)`;
-      [...heroDots.children].forEach((d,i) => d.classList.toggle('active', i === index));
-    }
-
-    fetch('post.json')
-      .then(r => r.json())
-      .then(data => {
-        allPosts = Array.isArray(data) ? data : [data];
-        filteredPosts = [...allPosts];
-        renderPage(getPage());
-        setupHero(allPosts);
-      })
-      .catch(() => {
-        allPosts = [];
-        filteredPosts = [];
-        renderPage(1);
-        setupHero([]);
-      });
+    searchInput.addEventListener('input', renderPosts);
+    loadPosts();
   </script>
 </body>
 </html>

@@ -1,259 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-const slug = new URLSearchParams(window.location.search).get('slug');
-
-function slugify(text) {
-  return (text || '')
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)+/g, '');
-}
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lord Of Mysteries - Atoz Cartoons Premium</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Loading post...</title>
+  <link rel="icon" href="https://i.postimg.cc/02NYDg6G/cartoon-favicon.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{background:#0a0a0a;color:#e8e8e8;font-family:Segoe UI,Tahoma,Verdana,sans-serif}
-    a{text-decoration:none;color:inherit}
-    .topbar{position:sticky;top:0;z-index:9999;background:linear-gradient(135deg,#161616,#0d0d0d);border-bottom:1px solid #272727;display:flex;align-items:center;justify-content:space-between;padding:14px 15px}
-    .brand{display:flex;align-items:center;gap:10px;color:#ff4757;font-weight:800;font-size:20px;cursor:pointer}
-    .wrap{max-width:1000px;margin:auto;padding:15px}
-    .open-hero{position:relative;border-radius:18px;overflow:hidden;background:#111;border:1px solid #2a2a2a;box-shadow:0 12px 28px rgba(0,0,0,.25)}
-    .open-hero img{width:100%;height:260px;object-fit:cover;display:block}
-    .open-hero .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.15))}
-    .open-hero .text{position:absolute;left:16px;bottom:16px;right:16px}
-    .open-hero h1{font-size:24px;color:#fff;margin-bottom:6px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
-    .open-hero p{color:#ddd;font-size:14px;line-height:1.7}
-    .poster{width:100%;max-width:360px;margin:18px auto 0;display:block;border-radius:16px;border:3px solid #ff4757;box-shadow:0 10px 26px rgba(255,71,87,.22)}
-    .box{margin-top:18px;background:linear-gradient(145deg,#1a1a1a,#111);border:1px solid #2b2b2b;border-radius:16px;padding:18px}
-    .box h2{color:#ff4757;font-size:20px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #ff4757;display:flex;align-items:center;gap:8px}
-    table{width:100%;border-collapse:collapse}
-    td{padding:10px 0;font-size:14px;vertical-align:top}
-    td:first-child{color:#ff4757;font-weight:700;width:40%}
-    .story{line-height:1.9;color:#cfcfcf;font-size:15px}
-    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .tag{padding:6px 10px;border-radius:999px;background:#222;border:1px solid #2d2d2d;font-size:11px;font-weight:700;text-transform:uppercase}
-    .ep-title{margin:26px 0 14px;font-size:22px;font-weight:800;border-left:4px solid #ff4757;padding-left:12px}
-    .ep{background:linear-gradient(145deg,#1a1a1a,#111);border:1px solid #2a2a2a;border-radius:16px;padding:16px;margin-bottom:14px}
-    .ep h3{font-size:18px;margin-bottom:10px;color:#fff}
-    .btns{display:grid;gap:10px;margin-top:10px}
-    .btn{display:block;text-align:center;padding:14px 12px;border-radius:10px;color:#fff;font-weight:800;font-size:14px;transition:.2s}
-    .btn:hover{transform:translateY(-2px)}
-    .drive{background:linear-gradient(45deg,#1e88e5,#42a5f5)}
-    .mega{background:linear-gradient(45deg,#ff5252,#ff7043)}
-    .telegram{margin-top:12px;padding:12px;border-radius:10px;background:#121212;border:1px solid #2d2d2d;color:#bbb;font-size:13px;text-align:center}
-    .footer{margin-top:26px;background:linear-gradient(135deg,#111,#0a0a0a);border-top:2px solid #ff4757;padding:22px 15px 26px;text-align:center}
-    .footer p{color:#a0a0a0;font-size:14px;line-height:1.8}
-    .footer .copyright{color:#ff4757;font-weight:800;margin-top:8px}
+    :root {
+      color-scheme: dark;
+      --bg: #090909;
+      --surface: #131313;
+      --surface-soft: #1b1b1b;
+      --border: #242424;
+      --text: #f4f4f4;
+      --muted: #9a9a9a;
+      --accent: #ff4d5a;
+      --shadow: 0 24px 62px rgba(0,0,0,0.3);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(circle at top, #151515 0%, #090909 48%, #050505 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page-shell {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      background: rgba(22,22,22,0.94);
+      padding: 18px 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.07rem; }
+    .brand i { color: var(--accent); }
+
+    .button { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 999px; background: rgba(255,77,90,0.15); color: var(--text); border: 1px solid rgba(255,77,90,0.18); transition: transform .2s ease; }
+    .button:hover { transform: translateY(-1px); }
+
+    .header-card {
+      display: grid;
+      gap: 18px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: linear-gradient(180deg, rgba(255,77,90,0.08), rgba(15,15,15,0.96));
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .post-banner { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+
+    .post-meta {
+      display: grid;
+      gap: 14px;
+      padding: 22px;
+    }
+
+    .post-category { display: inline-flex; gap: 10px; align-items: center; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+    .post-title { font-size: clamp(2rem, 3vw, 3.2rem); line-height: 1.05; }
+    .post-summary { color: var(--muted); max-width: 760px; }
+    .post-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
+
+    .post-grid {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: 1.4fr 0.8fr;
+    }
+
+    .content-card, .sidebar-card, .related-card { background: var(--surface); border-radius: 22px; border: 1px solid rgba(255,255,255,0.06); padding: 22px; box-shadow: var(--shadow); }
+
+    .detail-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    .detail-table tr { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .detail-table td { padding: 12px 0; font-size: 0.95rem; }
+    .detail-table td:first-child { color: var(--accent); width: 38%; font-weight: 700; }
+
+    .tag-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .tag-pill { padding: 10px 14px; border-radius: 999px; background: rgba(255,77,90,0.12); color: #ffd7dc; font-weight: 700; font-size: 0.88rem; }
+
+    .content-card p { margin-bottom: 18px; color: #dcdcdc; }
+
+    .downloads-list { display: grid; gap: 12px; margin-top: 12px; }
+    .download-link { display: inline-flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--text); }
+    .download-link i { color: var(--accent); }
+
+    .related-card h2 { margin-bottom: 16px; }
+    .related-list { display: grid; gap: 14px; }
+
+    .related-item {
+      display: grid;
+      gap: 10px;
+      padding: 16px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .related-item a { font-weight: 700; }
+    .related-item .meta { color: var(--muted); font-size: 0.88rem; }
+
+    .not-found { padding: 60px 20px; text-align: center; color: var(--muted); }
+    .not-found h1 { margin-bottom: 18px; }
+
+    @media (max-width: 900px) {
+      .post-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-
-  <div class="topbar">
-    <div class="brand" onclick="window.location.href='/'"><i class="fas fa-play-circle"></i> Atoz Cartoons Premium</div>
-  </div>
-
-  <div class="wrap">
-    <div class="open-hero">
-      <img src="https://i.postimg.cc/d0dCvwcX/Lord-of-Mysteries-1.webp" alt="Lord Of Mysteries">
-      <div class="overlay"></div>
-      <div class="text">
-        <h1>Lord Of Mysteries S01</h1>
-        <p>Victorian-era mystery, powers, secrets, and a modern soul trapped in a supernatural world.</p>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html"><i class="fas fa-film"></i> Kidz Cartoons Hub</a>
+      <div>
+        <a class="button" href="index.html"><i class="fas fa-arrow-left"></i> Back to Library</a>
       </div>
-    </div>
+    </header>
 
-    <img class="poster" src="https://i.postimg.cc/x8dqkSBn/filters-quality-95-format-webp.jpg" alt="Lord Of Mysteries Poster">
-
-    <div class="box">
-      <h2><i class="fas fa-info-circle"></i> DETAILS</h2>
-      <table>
-        <tr><td>Title:</td><td>Lord Of Mysteries</td></tr>
-        <tr><td>Season:</td><td>01</td></tr>
-        <tr><td>Type:</td><td>Anime</td></tr>
-        <tr><td>Language:</td><td>Hindi Dub</td></tr>
-        <tr><td>Subtitles:</td><td>English</td></tr>
-        <tr><td>Quality:</td><td>1080p WEB-DL</td></tr>
-        <tr><td>Genre:</td><td>Action, Adventure, Fantasy, Mystery</td></tr>
-        <tr><td>OTT:</td><td>Amazon Prime Video</td></tr>
-      </table>
-
-      <div class="tags">
-        <span class="tag">ANIME</span>
-        <span class="tag">HINDI DUB</span>
-        <span class="tag">AMAZON PRIME VIDEO</span>
-        <span class="tag">WEB-DL</span>
-      </div>
-    </div>
-
-    <div class="box">
-      <h2><i class="fas fa-book"></i> STORY</h2>
-      <div class="story">
-        Zhou Mingrui wakes up in a Victorian-style world as Klein Moretti, where steam technology, divination, potions, and supernatural powers shape a dangerous hidden society. As he rises through mysterious abilities and secret organizations, he uncovers a deep conspiracy that threatens the world.
-      </div>
-    </div>
-
-    <div class="box">
-      <h2><i class="fab fa-telegram-plane"></i> JOIN US ON TELEGRAM</h2>
-      <div class="story" style="text-align:center">
-        <a href="https://t.me/+yt1dK4iKsR44ZTU0" target="_blank" style="color:#5ab7ff;font-weight:800">Open Telegram Channel</a>
-      </div>
-    </div>
-
-    <div class="ep-title">SEASON 1</div>
-
-    <div class="ep">
-      <h3>01. The Fool</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>02. Beyonder</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>03. The Notebook</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>04. Magic Mirror</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>05. Hero</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>06. Teacher</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>07. Coincidence</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>08. Losing Control</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>09. Party</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>10. Clue</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>11. Mastermind</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>12. Bomb</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>13. Light</h3>
-      <div class="btns">
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x265 - xyzMB</a>
-        <a class="btn drive" href="YOUR_SHORTENER_LINK">Google Drive - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-        <a class="btn mega" href="YOUR_SHORTENER_LINK">Mega NZ - Watch/Download - 1080p x264 - xyzMB</a>
-      </div>
-    </div>
-
-    <div class="box">
-      <h2><i class="fas fa-envelope"></i> CONTACT</h2>
-      <div class="story">
-        Email: syedzaidjavaid@gmail.com<br>
-        Telegram: @AtozCartoonsPremium
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <p>Atoz Cartoons Premium - Premium Cartoons, Anime, Movies & OTT Collection</p>
-    <p class="copyright">© <span id="copyrightYear"></span> Atoz Cartoons Premium. All Rights Reserved.</p>
+    <main id="postContent"></main>
   </div>
 
   <script>
-    document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+    const postsPath = 'posts.json';
+    const postContent = document.getElementById('postContent');
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+
+    function slugify(text) {
+      return text.toString().toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    }
+
+    function createDetailRows(details) {
+      return Object.entries(details).map(([key, value]) => `
+        <tr><td>${key}</td><td>${value}</td></tr>
+      `).join('');
+    }
+
+    function createTags(tags) {
+      return tags.map(tag => `<span class="tag-pill">${tag}</span>`).join('');
+    }
+
+    function renderRelated(posts, currentSlug) {
+      if (!posts.length) return '';
+      return `
+        <section class="related-card">
+          <h2>More stories you may like</h2>
+          <div class="related-list">
+            ${posts.map(post => `
+              <div class="related-item">
+                <a href="post.html?slug=${encodeURIComponent(post.slug)}">${post.title}</a>
+                <div class="meta">${post.category} · ${post.date}</div>
+              </div>
+            `).join('')}
+          </div>
+        </section>
+      `;
+    }
+
+    async function loadPost() {
+      try {
+        const response = await fetch(postsPath);
+        const posts = await response.json();
+        const chosen = posts.find(post => post.slug === slug);
+        if (!chosen) {
+          postContent.innerHTML = `
+            <div class="not-found">
+              <h1>Story not found</h1>
+              <p>We couldn't locate a post for <strong>${slug || 'this page'}</strong>. Please return to the homepage and choose another story.</p>
+            </div>
+          `;
+          document.title = 'Post not found — Kidz Cartoons Hub';
+          return;
+        }
+
+        document.title = `${chosen.title} | Kidz Cartoons Hub`;
+        const related = posts.filter(post => post.slug !== chosen.slug && post.category === chosen.category).slice(0, 3);
+
+        postContent.innerHTML = `
+          <article class="header-card">
+            <img class="post-banner" src="${chosen.banner || chosen.image}" alt="${chosen.title}" loading="lazy" />
+            <div class="post-meta">
+              <div class="post-category"><i class="fas fa-tags"></i>${chosen.category}</div>
+              <h1 class="post-title">${chosen.title}</h1>
+              <p class="post-summary">${chosen.summary}</p>
+              <div class="post-actions">
+                <a class="button" href="index.html"><i class="fas fa-home"></i> Back to library</a>
+                <a class="button" href="editor.html"><i class="fas fa-pencil-alt"></i> Add new post</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="post-grid">
+            <section class="content-card">
+              <div class="tag-grid">${createTags(chosen.tags)}</div>
+              <div class="content-body">${chosen.content.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('')}</div>
+            </section>
+            <aside class="sidebar-card">
+              <h2>Details</h2>
+              <table class="detail-table">${createDetailRows(chosen.details)}</table>
+              <div class="downloads-list">
+                ${chosen.downloadLinks.map(link => `
+                  <a class="download-link" href="${link.url}" target="_blank" rel="noopener noreferrer">
+                    <span>${link.label}</span>
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                `).join('')}
+              </div>
+            </aside>
+          </div>
+
+          ${renderRelated(related, chosen.slug)}
+        `;
+      } catch (error) {
+        postContent.innerHTML = '<div class="not-found"><h1>Unable to load story</h1><p>Please try again later.</p></div>';
+        console.error(error);
+      }
+    }
+
+    loadPost();
   </script>
 </body>
 </html>
