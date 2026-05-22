@@ -72,4 +72,33 @@
       { "label": "Amazon Prime Video - Watch", "url": "https://example.com/amazon-tom-jerry" }
     ]
   }
-]
+],
+{
+  "slug": "motu-patlu-ka-goa-dhamaal",
+  "title": "Motu Patlu Ka Goa Dhamaal",
+  "category": "Cartoons",
+  "tags": [
+    "Hindi Dub"
+  ],
+  "summary": "Motu and Patlu, two friends living in Furfuri Nagar, always get themselves into hilarious situations and later rescued merely by luck, using the help from Ghasita Ram, Inspector Chingam and Dr. Jhatka.",
+  "image": "https://i.postimg.cc/rFXSMBNf/MV5BOWVl-Zj-Y0Yj-At-ZWFk-My00YTU2LThm-Mm-Yt-Njdl-MWRh-OTQ5MDMz-Xk-Ey-Xk-Fqc-Gc-V1.jpg",
+  "banner": "https://i.postimg.cc/9QxRRKym/IMG-20260322-095054-364.jpg",
+  "author": "Kidz Cartoons Hub",
+  "date": "2026-05-22",
+  "views": 0,
+  "featured": false,
+  "details": {
+    "Season": "Movie",
+    "Language": "Multi Audio",
+    "Quality": "480p, 720p, 1080p",
+    "Genre": "Action, Adventure, Comedy",
+    "OTT": "JioHotstar"
+  },
+  "content": "Motu and Patlu, two friends living in Furfuri Nagar, always get themselves into hilarious situations and later rescued merely by luck, using the help from Ghasita Ram, Inspector Chingam and Dr. Jhatka.",
+  "downloadLinks": [
+    {
+      "label": "Google Drive",
+      "url": "/"
+    }
+  ]
+}
