@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atoz Cartoons Premium</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0a0a0a;
+      color:#e8e8e8;
+      font-family:Segoe UI,Tahoma,Verdana,sans-serif;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .header{
+      position:sticky;
+      top:0;
+      z-index:9999;
+      background:linear-gradient(135deg,#161616,#0d0d0d);
+      border-bottom:1px solid #272727;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 15px;
+    }
+
+    .header-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:#ff4757;
+      font-weight:800;
+      font-size:20px;
+    }
+
+    .logo i{
+      font-size:22px;
+    }
+
+    .menu-btn,
+    .search-toggle-btn{
+      background:#171717;
+      border:1px solid #2b2b2b;
+      color:#fff;
+      width:36px;
+      height:36px;
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      cursor:pointer;
+    }
+
+    .search-wrap{
+      background:#111;
+      padding:12px 15px;
+      border-bottom:1px solid #222;
+    }
+
+    .search-box{
+      max-width:1200px;
+      margin:auto;
+      position:relative;
+      border:1px solid #2d2d2d;
+      border-radius:999px;
+      overflow:hidden;
+      transition:.25s;
+    }
+
+    .search-box:focus-within{
+      box-shadow:0 0 18px rgba(255,71,87,.25);
+      border-color:#ff4757;
+    }
+
+    .search-box input{
+      width:100%;
+      padding:14px 48px 14px 18px;
+      border:0;
+      outline:0;
+      background:#0d0d0d;
+      color:#fff;
+      font-size:15px;
+    }
+
+    .search-box i{
+      position:absolute;
+      right:18px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#ff4757;
+    }
+
+    .hero{
+      max-width:1200px;
+      margin:18px auto 0;
+      padding:0 15px;
+    }
+
+    .hero-card{
+      background:linear-gradient(145deg,#1a1a1a,#111);
+      border:1px solid #292929;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      min-height:50px;
+    }
+
+    .hero-slider{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-track{
+      display:flex;
+      transition:transform .45s ease;
+    }
+
+    .hero-slide{
+      min-width:100%;
+      position:relative;
+    }
+
+    .hero-slide img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .hero-slide .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.15));
+    }
+
+    .hero-content{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      padding:18px;
+    }
+
+    .hero-content h1{
+      font-size:22px;
+      color:#fff;
+      margin-bottom:8px;
+    }
+
+    .hero-content p{
+      color:#b7b7b7;
+      line-height:1.8;
+      font-size:14px;
+    }
+
+    .hero-dots{
+      display:flex;
+      gap:8px;
+      justify-content:center;
+      padding:12px 0 14px;
+    }
+
+    .dot{
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:#333;
+      cursor:pointer;
+    }
+
+    .dot.active{
+      background:#ff4757;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:15px;
+    }
+
+    .section-title{
+      margin:24px 0 14px;
+      font-size:22px;
+      font-weight:700;
+      border-left:4px solid #ff4757;
+      padding-left:12px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:18px 0 8px;
+    }
+
+    .tab{
+      background:#171717;
+      border:1px solid #2b2b2b;
+      color:#fff;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:13px;
+      cursor:pointer;
+      transition:.2s;
+      text-transform:uppercase;
+    }
+
+    .tab:hover,
+    .tab.active{
+      background:#ff4757;
+      border-color:#ff4757;
+    }
+
+    .submenu-row{
+      display:none;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:10px 0 4px;
+    }
+
+    .submenu-row.active{
+      display:flex;
+    }
+
+    .submenu{
+      background:#141414;
+      border:1px solid #2a2a2a;
+      color:#ddd;
+      padding:9px 13px;
+      border-radius:999px;
+      font-size:12px;
+      cursor:pointer;
+    }
+
+    .submenu:hover{
+      border-color:#ff4757;
+      color:#ff4757;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+
+    .card{
+      background:linear-gradient(145deg,#1b1b1b,#121212);
+      border:1px solid #282828;
+      border-radius:14px;
+      overflow:hidden;
+      transition:.25s;
+      cursor:pointer;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:#ff4757;
+      box-shadow:0 10px 26px rgba(255,71,87,.25);
+    }
+
+    .card img{
+      width:100%;
+      height:270px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .card-info{
+      padding:13px;
+    }
+
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-bottom:10px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:5px 9px;
+      border-radius:6px;
+      background:#ff4757;
+      color:#fff;
+      font-size:10px;
+      font-weight:700;
+      text-transform:uppercase;
+    }
+
+    .card h3{
+      font-size:15px;
+      line-height:1.4;
+      height:42px;
+      overflow:hidden;
+      color:#fff;
+    }
+
+    .view-btn{
+      margin-top:10px;
+      background:linear-gradient(45deg,#ff4757,#ff6b57);
+      text-align:center;
+      color:#fff;
+      padding:11px;
+      border-radius:8px;
+      font-weight:700;
+    }
+
+    .coming-soon{
+      text-align:center;
+      color:#9c9c9c;
+      padding:28px 10px;
+      font-size:15px;
+    }
+
+    .pagination{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin:22px 0 0;
+    }
+
+    .page-link{
+      padding:10px 14px;
+      border-radius:10px;
+      border:1px solid #2b2b2b;
+      background:#171717;
+      color:#fff;
+      min-width:42px;
+      text-align:center;
+    }
+
+    .page-link.active{
+      background:#ff4757;
+      border-color:#ff4757;
+    }
+
+    .social-box{
+      max-width:1200px;
+      margin:30px auto 0;
+      padding:0 15px;
+    }
+
+    .social-inner{
+      background:linear-gradient(145deg,#171717,#101010);
+      border:1px solid #2a2a2a;
+      border-radius:16px;
+      padding:18px;
+      text-align:center;
+    }
+
+    .social-inner h2{
+      color:#ff4757;
+      margin-bottom:14px;
+      font-size:20px;
+    }
+
+    .social-icons{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .social-icons a{
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#1f1f1f;
+      border:1px solid #2d2d2d;
+      color:#fff;
+      font-size:18px;
+      transition:.2s;
+    }
+
+    .social-icons a:hover{
+      transform:translateY(-3px);
+      border-color:#ff4757;
+      color:#ff4757;
+    }
+
+    .join-telegram{
+      max-width:1200px;
+      margin:18px auto 0;
+      padding:0 15px;
+    }
+
+    .join-telegram .box{
+      background:linear-gradient(45deg,#1089ff,#2f9bff);
+      color:#fff;
+      border-radius:16px;
+      padding:18px;
+      text-align:center;
+      font-weight:800;
+      box-shadow:0 8px 22px rgba(16,137,255,.25);
+      cursor:pointer;
+    }
+
+    .footer{
+      margin-top:26px;
+      background:linear-gradient(135deg,#111,#0a0a0a);
+      border-top:2px solid #ff4757;
+      padding:22px 15px 26px;
+      text-align:center;
+    }
+
+    .footer p{
+      color:#a0a0a0;
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .footer .copyright{
+      color:#ff4757;
+      font-weight:800;
+      margin-top:8px;
+    }
+
+    @media(min-width:700px){
+      .grid{
+        grid-template-columns:repeat(4,1fr);
+      }
+      .hero-slide img{
+        height:300px;
+      }
+      .card img{
+        height:250px;
+      }
+    }
+
+    @media(max-width:700px){
+      .logo{
+        font-size:16px;
+      }
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:480px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+      .header{
+        padding:12px 10px;
+      }
+      .logo span{
+        font-size:15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-left">
+      <button class="menu-btn" onclick="scrollToSection('categories')" aria-label="Open menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <a class="logo" href="/">
+        <i class="fas fa-play-circle"></i>
+        <span>Atoz Cartoons Premium</span>
+      </a>
+    </div>
+
+    <button class="search-toggle-btn" onclick="toggleSearch()" aria-label="Search">
+      <i class="fas fa-search"></i>
+    </button>
+  </header>
+
+  <div class="search-wrap" id="searchWrap" style="display:none;">
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="Search posts...">
+      <i class="fas fa-search"></i>
+    </div>
+  </div>
+
+  <main>
+    <section class="hero" id="heroSection">
+      <div class="hero-card">
+        <div class="hero-slider">
+          <div class="hero-track" id="heroTrack"></div>
+        </div>
+        <div class="hero-dots" id="heroDots"></div>
+      </div>
+    </section>
+
+    <section class="container" id="categories">
+      <div class="section-title">
+        <i class="fas fa-layer-group"></i>
+        <span>CATEGORIES</span>
+      </div>
+
+      <div class="tabs">
+        <div class="tab active" onclick="showMain('home', this)">HOME</div>
+        <div class="tab" onclick="showMain('cartoons', this)">CARTOONS</div>
+        <div class="tab" onclick="showMain('anime', this)">ANIME</div>
+        <div class="tab" onclick="showMain('movies', this)">MOVIES</div>
+        <div class="tab" onclick="showMain('tvrips', this)">TV RIPS</div>
+        <div class="tab" onclick="showMain('ott', this)">OTT NETWORK</div>
+        <div class="tab" onclick="showMain('contact', this)">CONTACT US</div>
+        <div class="tab" onclick="showMain('dmca', this)">DMCA</div>
+      </div>
+
+      <div id="submenu-cartoons" class="submenu-row">
+        <div class="submenu">HINDI DUB - Coming Soon</div>
+        <div class="submenu">ENG DUB - Coming Soon</div>
+      </div>
+
+      <div id="submenu-anime" class="submenu-row">
+        <div class="submenu" onclick="filterByTag('HINDI DUB')">HINDI DUB</div>
+        <div class="submenu" onclick="filterByTag('ENG SUB')">ENG SUB</div>
+      </div>
+
+      <div id="submenu-movies" class="submenu-row">
+        <div class="submenu">ANIMATED MOVIES - Coming Soon</div>
+        <div class="submenu">ANIME MOVIES - Coming Soon</div>
+      </div>
+
+      <div id="submenu-tvrips" class="submenu-row">
+        <div class="submenu" onclick="filterByTag('TATAPLAY')">TATAPLAY</div>
+        <div class="submenu" onclick="filterByTag('JIOTV')">JIOTV</div>
+        <div class="submenu" onclick="filterByTag('AIRTEL XSTREAM')">AIRTEL XSTREAM</div>
+        <div class="submenu" onclick="filterByTag('DISH TV')">DISH TV</div>
+        <div class="submenu" onclick="filterByTag('SUNTV')">SUNTV</div>
+      </div>
+
+      <div id="submenu-ott" class="submenu-row">
+        <div class="submenu" onclick="filterByTag('Amazon Prime Video')">Amazon Prime Video</div>
+        <div class="submenu" onclick="filterByTag('Netflix')">Netflix</div>
+        <div class="submenu" onclick="filterByTag('Crunchyroll')">Crunchyroll</div>
+        <div class="submenu" onclick="filterByTag('Disney+')">Disney+</div>
+        <div class="submenu" onclick="filterByTag('SonyLiv')">SonyLiv</div>
+        <div class="submenu" onclick="filterByTag('MX Player')">MX Player</div>
+        <div class="submenu" onclick="filterByTag('Apple Tv+')">Apple Tv+</div>
+        <div class="submenu" onclick="filterByTag('JioCinema')">JioCinema</div>
+        <div class="submenu" onclick="filterByTag('VootKids')">VootKids</div>
+        <div class="submenu" onclick="filterByTag('JioHotstar')">JioHotstar</div>
+        <div class="submenu" onclick="filterByTag('Discovery Plus')">Discovery Plus</div>
+        <div class="submenu" onclick="filterByTag('ZEE5')">ZEE5</div>
+        <div class="submenu" onclick="filterByTag('Waves')">Waves</div>
+        <div class="submenu" onclick="filterByTag('YouTube')">YouTube</div>
+      </div>
+
+      <div id="main-home">
+        <div class="section-title">
+          <i class="fas fa-fire"></i>
+          <span>LATEST POSTS</span>
+        </div>
+
+        <div class="grid" id="postGrid"></div>
+        <div class="coming-soon" id="noResults" style="display:none;">No results found 😢</div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+
+      <div id="main-contact" style="display:none;">
+        <div class="section-title">
+          <i class="fas fa-envelope"></i>
+          <span>CONTACT US</span>
+        </div>
+        <div class="card">
+          <div class="card-info">
+            <p>Email: syedzaidjavaid@gmail.com</p>
+            <p>Telegram: @AtozCartoonsPremium</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="main-dmca" style="display:none;">
+        <div class="section-title">
+          <i class="fas fa-shield-alt"></i>
+          <span>DMCA</span>
+        </div>
+        <div class="card">
+          <div class="card-info">
+            <p>Atoz Cartoons Premium respects copyright and DMCA requests. If you own the content, contact us with valid proof and we will review it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="social-box">
+      <div class="social-inner">
+        <h2>SOCIAL MEDIA</h2>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/AtozCartoonsPremium" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://youtube.com/@EditXZaid" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+          <a href="https://pin.it/6gZ5JE5XZ" target="_blank" rel="noopener noreferrer"><i class="fab fa-pinterest-p"></i></a>
+          <a href="https://t.me/+yt1dK4iKsR44ZTU0" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="join-telegram">
+      <div class="box" onclick="window.open('https://t.me/+yt1dK4iKsR44ZTU0','_blank')">
+        <i class="fab fa-telegram-plane"></i> JOIN US ON TELEGRAM
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Atoz Cartoons Premium - Premium Cartoons, Anime, Movies & OTT Collection</p>
+    <p class="copyright">© <span id="copyrightYear"></span> Atoz Cartoons Premium. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function toggleSearch() {
+      const el = document.getElementById('searchWrap');
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
