@@ -11,6 +11,7 @@
     html{scroll-behavior:smooth}
     body{background:#0a0a0a;color:#e8e8e8;font-family:Segoe UI,Tahoma,Verdana,sans-serif}
     a{text-decoration:none;color:inherit}
+
     .header{
       position:sticky;top:0;z-index:9999;
       background:linear-gradient(135deg,#161616,#0d0d0d);
@@ -21,21 +22,32 @@
     .logo{display:flex;align-items:center;gap:10px;color:#ff4757;font-weight:800;font-size:20px}
     .logo i{font-size:22px}
     .menu-btn{font-size:24px;color:#fff;cursor:pointer}
+
     .search-wrap{
       position:sticky;top:62px;z-index:9998;
       background:#111;padding:12px 15px;border-bottom:1px solid #222;
+      display:flex;justify-content:flex-end;align-items:center;gap:10px;
+    }
+    .search-toggle{
+      width:44px;height:44px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:#171717;border:1px solid #2d2d2d;color:#ff4757;
+      cursor:pointer;flex:0 0 auto;
     }
     .search-box{
-      max-width:1200px;margin:auto;position:relative;
-      border:1px solid #2d2d2d;border-radius:999px;overflow:hidden;
-      transition:.25s;
+      max-width:420px;width:100%;
+      position:relative;border:1px solid #2d2d2d;border-radius:999px;
+      overflow:hidden;display:flex;background:#0d0d0d;
     }
-    .search-box:focus-within{box-shadow:0 0 18px rgba(255,71,87,.25);border-color:#ff4757}
+    .search-box.hidden{display:none}
     .search-box input{
-      width:100%;padding:14px 48px 14px 18px;border:0;outline:0;
-      background:#0d0d0d;color:#fff;font-size:15px
+      flex:1;padding:14px 18px;border:0;outline:0;
+      background:transparent;color:#fff;font-size:15px
     }
-    .search-box i{position:absolute;right:18px;top:50%;transform:translateY(-50%);color:#ff4757}
+    .search-btn{
+      width:56px;border:0;background:transparent;color:#ff4757;cursor:pointer
+    }
+
     .hero{
       max-width:1200px;margin:18px auto 0;padding:0 15px;
     }
@@ -55,6 +67,7 @@
     .hero-dots{display:flex;gap:8px;justify-content:center;padding:12px 0 14px}
     .dot{width:9px;height:9px;border-radius:50%;background:#333;cursor:pointer}
     .dot.active{background:#ff4757}
+
     .container{max-width:1200px;margin:auto;padding:15px}
     .section-title{
       margin:24px 0 14px;font-size:22px;font-weight:700;
@@ -80,18 +93,15 @@
       margin-top:10px;background:linear-gradient(45deg,#ff4757,#ff6b57);
       text-align:center;color:#fff;padding:11px;border-radius:8px;font-weight:700
     }
-    .tabs{
-      display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 8px
-    }
+
+    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 8px}
     .tab{
       background:#171717;border:1px solid #2b2b2b;color:#fff;
       padding:10px 14px;border-radius:999px;font-size:13px;cursor:pointer;
       transition:.2s;text-transform:uppercase
     }
     .tab:hover,.tab.active{background:#ff4757;border-color:#ff4757}
-    .submenu-row{
-      display:none;gap:10px;flex-wrap:wrap;margin:10px 0 4px
-    }
+    .submenu-row{display:none;gap:10px;flex-wrap:wrap;margin:10px 0 4px}
     .submenu-row.active{display:flex}
     .submenu{
       background:#141414;border:1px solid #2a2a2a;color:#ddd;
@@ -105,6 +115,7 @@
       background:#171717;color:#fff;min-width:42px;text-align:center
     }
     .page-link.active{background:#ff4757;border-color:#ff4757}
+
     .social-box{max-width:1200px;margin:30px auto 0;padding:0 15px}
     .social-inner{
       background:linear-gradient(145deg,#171717,#101010);
@@ -119,6 +130,7 @@
       font-size:18px;transition:.2s
     }
     .social-icons a:hover{transform:translateY(-3px);border-color:#ff4757;color:#ff4757}
+
     .join-telegram{max-width:1200px;margin:18px auto 0;padding:0 15px}
     .join-telegram .box{
       background:linear-gradient(45deg,#1089ff,#2f9bff);
@@ -132,6 +144,7 @@
     .footer p{color:#a0a0a0;font-size:14px;line-height:1.8}
     .footer .copyright{color:#ff4757;font-weight:800;margin-top:8px}
     .hidden{display:none!important}
+
     @media(min-width:700px){
       .grid{grid-template-columns:repeat(4,1fr)}
       .hero-slide img{height:300px}
@@ -149,10 +162,16 @@
   </div>
 
   <div class="search-wrap">
-    <div class="search-box">
-      <input id="searchInput" type="text" placeholder="Search posts...">
+    <div class="search-toggle" id="searchToggle">
       <i class="fas fa-search"></i>
     </div>
+
+    <form class="search-box hidden" id="searchForm">
+      <input id="searchInput" type="search" placeholder="Search posts..." autocomplete="off">
+      <button type="submit" class="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
   </div>
 
   <div class="hero" id="heroSection">
@@ -178,16 +197,16 @@
     </div>
 
     <div id="submenu-cartoons" class="submenu-row">
-      <div class="submenu" onclick="filterByTag('HINDI DUBBED')">HINDI DUBBED</div>
-      <div class="submenu" onclick="filterByTag('ENG DUB')">ENG DUB</div>
+      <div class="submenu" onclick="comingSoon()">HINDI DUB</div>
+      <div class="submenu" onclick="comingSoon()">ENG DUB</div>
     </div>
     <div id="submenu-anime" class="submenu-row">
       <div class="submenu" onclick="filterByTag('HINDI DUB')">HINDI DUB</div>
       <div class="submenu" onclick="filterByTag('ENG SUB')">ENG SUB</div>
     </div>
     <div id="submenu-movies" class="submenu-row">
-      <div class="submenu" onclick="filterByTag('ANIMATED MOVIES')">ANIMATED MOVIES</div>
-      <div class="submenu" onclick="filterByTag('ANIME MOVIES')">ANIME MOVIES</div>
+      <div class="submenu" onclick="comingSoon()">ANIMATED MOVIES</div>
+      <div class="submenu" onclick="comingSoon()">ANIME MOVIES</div>
     </div>
     <div id="submenu-tvrips" class="submenu-row">
       <div class="submenu" onclick="filterByTag('TATAPLAY')">TATAPLAY</div>
@@ -244,18 +263,10 @@
     <div class="social-inner">
       <h2>SOCIAL MEDIA</h2>
       <div class="social-icons">
-        <a href="https://www.facebook.com/AtozCartoonsPremium" target="_blank" rel="noopener noreferrer" title="Facebook">
-          <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="https://youtube.com/@EditXZaid" target="_blank" rel="noopener noreferrer" title="YouTube">
-          <i class="fab fa-youtube"></i>
-        </a>
-        <a href="https://pin.it/6gZ5JE5XZ" target="_blank" rel="noopener noreferrer" title="Pinterest">
-          <i class="fab fa-pinterest-p"></i>
-        </a>
-        <a href="https://t.me/+yt1dK4iKsR44ZTU0" target="_blank" rel="noopener noreferrer" title="Telegram">
-          <i class="fab fa-telegram-plane"></i>
-        </a>
+        <a href="https://www.facebook.com/AtozCartoonsPremium" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://youtube.com/@EditXZaid" target="_blank" rel="noopener noreferrer" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://pin.it/6gZ5JE5XZ" target="_blank" rel="noopener noreferrer" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        <a href="https://t.me/+yt1dK4iKsR44ZTU0" target="_blank" rel="noopener noreferrer" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
       </div>
     </div>
   </div>
@@ -274,6 +285,8 @@
   <script>
     document.getElementById('copyrightYear').textContent = new Date().getFullYear();
 
+    const searchToggle = document.getElementById('searchToggle');
+    const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
     const postGrid = document.getElementById('postGrid');
     const noResults = document.getElementById('noResults');
@@ -393,7 +406,7 @@
       renderPage(1);
     }
 
-    searchInput.addEventListener('input', ()=>{
+    function runSearch(){
       const q = searchInput.value.toLowerCase().trim();
       filteredPosts = allPosts.filter(post => {
         const t = (post.title || '').toLowerCase();
@@ -402,6 +415,24 @@
         return !q || t.includes(q) || tags.includes(q) || cat.includes(q);
       });
       renderPage(1);
+    }
+
+    searchToggle.addEventListener('click', () => {
+      searchForm.classList.contains('hidden') ? searchForm.classList.remove('hidden') : searchForm.classList.add('hidden');
+      if (!searchForm.classList.contains('hidden')) searchInput.focus();
+    });
+
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      runSearch();
+    });
+
+    searchInput.addEventListener('input', runSearch);
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.search-wrap')) {
+        searchForm.classList.add('hidden');
+      }
     });
 
     function setupHero(posts){
