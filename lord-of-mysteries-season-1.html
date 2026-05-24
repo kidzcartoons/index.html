@@ -25,8 +25,8 @@
       color:#ff4757;font-weight:800;font-size:20px;
       min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
       flex:1;
-      transition:.2s ease;
       cursor:pointer;
+      transition:.2s ease;
     }
     .brand.hide{
       opacity:0;transform:translateX(-10px);pointer-events:none;width:0;min-width:0;flex:0;
@@ -217,11 +217,8 @@
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
 
-    function doSearch() {
-      const q = searchInput.value.trim().toLowerCase();
-      document.querySelectorAll('.ep, .box, .howto').forEach(card => {
-        card.style.display = (!q || card.innerText.toLowerCase().includes(q)) ? '' : 'none';
-      });
+    function goHome() {
+      window.location.href = '/';
     }
 
     searchToggle.addEventListener('click', () => {
@@ -230,13 +227,12 @@
       if (active) searchInput.focus();
       if (!active) {
         searchInput.value = '';
-        document.querySelectorAll('.ep, .box, .howto').forEach(el => el.style.display = '');
       }
     });
 
-    searchBtn.addEventListener('click', doSearch);
+    searchBtn.addEventListener('click', goHome);
     searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') doSearch();
+      if (e.key === 'Enter') goHome();
     });
   </script>
 </body>
