@@ -26,6 +26,7 @@
       min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
       flex:1;
       transition:.2s ease;
+      cursor:pointer;
     }
     .brand.hide{
       opacity:0;transform:translateX(-10px);pointer-events:none;width:0;min-width:0;flex:0;
@@ -67,7 +68,9 @@
       display:block;
       border-radius:16px;
       border:3px solid #ff4757;
-      box-shadow:0 10px 26px rgba(255,71,87,.22)
+      box-shadow:0 10px 26px rgba(255,71,87,.22);
+      object-fit:contain;
+      background:#000;
     }
 
     .box{margin-top:18px;background:linear-gradient(145deg,#1a1a1a,#111);border:1px solid #2b2b2b;border-radius:16px;padding:18px}
@@ -98,12 +101,21 @@
       .box{padding:16px}
       td:first-child{width:42%}
       .brand{font-size:18px}
+      .poster{max-width:100%}
+    }
+
+    @media (min-width: 769px) and (max-width: 1199px){
+      .poster{max-width:820px}
+    }
+
+    @media (min-width: 1200px){
+      .poster{max-width:980px}
     }
   </style>
 </head>
 <body>
   <div class="topbar">
-    <div class="brand" id="brandTitle">
+    <div class="brand" id="brandTitle" onclick="window.location.href='/'">
       <i class="fas fa-play-circle"></i> Atoz Cartoons Premium
     </div>
 
@@ -207,19 +219,19 @@
 
     function doSearch() {
       const q = searchInput.value.trim().toLowerCase();
-      if (!q) return;
-      const cards = document.querySelectorAll('.ep, .box, .howto');
-      cards.forEach(card => {
-        const txt = card.innerText.toLowerCase();
-        card.style.display = txt.includes(q) ? '' : 'none';
+      document.querySelectorAll('.ep, .box, .howto').forEach(card => {
+        card.style.display = (!q || card.innerText.toLowerCase().includes(q)) ? '' : 'none';
       });
-      document.querySelector('.ep-title').style.display = '';
     }
 
     searchToggle.addEventListener('click', () => {
       const active = searchBox.classList.toggle('active');
       brandTitle.classList.toggle('hide', active);
       if (active) searchInput.focus();
+      if (!active) {
+        searchInput.value = '';
+        document.querySelectorAll('.ep, .box, .howto').forEach(el => el.style.display = '');
+      }
     });
 
     searchBtn.addEventListener('click', doSearch);
