@@ -217,22 +217,22 @@
     const searchInput = document.getElementById('searchInput');
     const searchBtn = document.getElementById('searchBtn');
 
-    function goHome() {
-      window.location.href = '/';
+    function doSearch() {
+      const q = searchInput.value.trim();
+      if (!q) return;
+      window.location.href = '/?q=' + encodeURIComponent(q);
     }
 
     searchToggle.addEventListener('click', () => {
       const active = searchBox.classList.toggle('active');
       brandTitle.classList.toggle('hide', active);
       if (active) searchInput.focus();
-      if (!active) {
-        searchInput.value = '';
-      }
+      if (!active) searchInput.value = '';
     });
 
-    searchBtn.addEventListener('click', goHome);
+    searchBtn.addEventListener('click', doSearch);
     searchInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') goHome();
+      if (e.key === 'Enter') doSearch();
     });
   </script>
 </body>
