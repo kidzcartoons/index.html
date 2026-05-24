@@ -16,37 +16,36 @@
       position:sticky;top:0;z-index:9999;
       background:linear-gradient(135deg,#161616,#0d0d0d);
       border-bottom:1px solid #272727;
-      display:flex;align-items:center;justify-content:space-between;
+      display:flex;align-items:center;gap:10px;
       padding:14px 15px;
     }
+    .menu-btn{
+      width:42px;height:42px;border:none;background:transparent;color:#fff;
+      font-size:28px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+    }
     .brand{
-      display:flex;align-items:center;gap:10px;
-      color:#ff4757;font-weight:800;font-size:20px;cursor:pointer;
+      display:flex;align-items:center;gap:10px;color:#ff4757;font-weight:800;
+      font-size:20px;cursor:pointer;min-width:0;white-space:nowrap;overflow:hidden;
+      text-overflow:ellipsis;flex:1;
       transition:.2s ease;
     }
     .brand.hide{opacity:0;transform:translateX(10px);pointer-events:none}
-    .search-head{
-      display:flex;align-items:center;gap:10px;flex:1;justify-content:flex-end
-    }
+
     .search-toggle{
-      width:42px;height:42px;border-radius:50%;
-      border:none;background:#ff4757;color:#fff;cursor:pointer;
-      display:flex;align-items:center;justify-content:center;
-      flex:0 0 auto;
+      width:42px;height:42px;border-radius:50%;border:none;background:#ff4757;
+      color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+      margin-left:auto;
     }
-    .search-box{
-      display:none;align-items:center;gap:8px;
-      width:min(420px,100%);
-      background:#111;border:1px solid #2a2a2a;border-radius:999px;
-      padding:8px 10px;
+    .search-head{
+      display:none;align-items:center;gap:8px;flex:1;justify-content:flex-end;
     }
-    .search-box.active{display:flex}
-    .search-box input{
-      flex:1;border:none;outline:none;background:transparent;color:#fff;
-      font-size:14px;padding:4px 6px;
+    .search-head.active{display:flex}
+    .search-head input{
+      flex:1;min-width:0;border:none;outline:none;background:#111;color:#fff;
+      border-radius:999px;padding:12px 16px;border:1px solid #2a2a2a;
     }
-    .search-box button{
-      border:none;background:#ff4757;color:#fff;width:36px;height:36px;border-radius:50%;
+    .search-head button{
+      border:none;background:#ff4757;color:#fff;width:42px;height:42px;border-radius:50%;
       cursor:pointer;flex:0 0 auto;
     }
 
@@ -57,17 +56,7 @@
     .open-hero .text{position:absolute;left:16px;bottom:16px;right:16px}
     .open-hero h1{font-size:24px;color:#fff;margin-bottom:6px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
     .open-hero p{color:#ddd;font-size:14px;line-height:1.7}
-
-    .poster{
-      width:100%;
-      max-width:360px;
-      margin:18px auto 0;
-      display:block;
-      border-radius:16px;
-      border:3px solid #ff4757;
-      box-shadow:0 10px 26px rgba(255,71,87,.22)
-    }
-
+    .poster{width:100%;max-width:360px;margin:18px auto 0;display:block;border-radius:16px;border:3px solid #ff4757;box-shadow:0 10px 26px rgba(255,71,87,.22)}
     .box{margin-top:18px;background:linear-gradient(145deg,#1a1a1a,#111);border:1px solid #2b2b2b;border-radius:16px;padding:18px}
     .box h2{color:#ff4757;font-size:20px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #ff4757;display:flex;align-items:center;gap:8px}
     table{width:100%;border-collapse:collapse}
@@ -84,26 +73,11 @@
     .btn:hover{transform:translateY(-2px)}
     .drive{background:linear-gradient(45deg,#1e88e5,#42a5f5)}
     .mega{background:linear-gradient(45deg,#ff5252,#ff7043)}
-
-    .howto{
-      margin-top:18px;
-      border-radius:12px;
-      overflow:hidden;
-      border:1px solid #2b2b2b;
-      background:#10131a;
-    }
-    .howto a{
-      display:block;
-      padding:16px;
-      color:#66a6ff;
-      font-weight:800;
-      text-align:center;
-    }
-
+    .howto{margin-top:18px;border-radius:12px;overflow:hidden;border:1px solid #2b2b2b;background:#10131a}
+    .howto a{display:block;padding:16px;color:#66a6ff;font-weight:800;text-align:center}
     .footer{margin-top:26px;background:linear-gradient(135deg,#111,#0a0a0a);border-top:2px solid #ff4757;padding:22px 15px 26px;text-align:center}
     .footer p{color:#a0a0a0;font-size:14px;line-height:1.8}
     .footer .copyright{color:#ff4757;font-weight:800;margin-top:8px}
-
     @media (max-width: 768px){
       .wrap{padding:12px}
       .open-hero img{height:200px}
@@ -114,20 +88,19 @@
   </style>
 </head>
 <body>
-
   <div class="topbar">
-    <button class="search-toggle" id="searchToggle" type="button"><i class="fas fa-search"></i></button>
+    <button class="menu-btn" type="button"><i class="fas fa-bars"></i></button>
 
     <div class="brand" id="brandTitle" onclick="window.location.href='/'">
       <i class="fas fa-play-circle"></i> Atoz Cartoons Premium
     </div>
 
-    <div class="search-head">
-      <form class="search-box" id="searchBox" onsubmit="return false;">
-        <input type="text" placeholder="Search posts..." />
-        <button type="button"><i class="fas fa-search"></i></button>
-      </form>
-    </div>
+    <form class="search-head" id="searchBox" onsubmit="return false;">
+      <input type="text" placeholder="Search posts..." />
+      <button type="button"><i class="fas fa-search"></i></button>
+    </form>
+
+    <button class="search-toggle" id="searchToggle" type="button"><i class="fas fa-search"></i></button>
   </div>
 
   <div class="wrap">
@@ -154,7 +127,6 @@
         <tr><td>Genre:</td><td>Action, Adventure, Fantasy, Mystery</td></tr>
         <tr><td>OTT:</td><td>Amazon Prime Video</td></tr>
       </table>
-
       <div class="tags">
         <span class="tag">ANIME</span>
         <span class="tag">HINDI DUB</span>
@@ -165,9 +137,7 @@
 
     <div class="box">
       <h2><i class="fas fa-book"></i> STORY</h2>
-      <div class="story">
-        Zhou Mingrui wakes up in a Victorian-style world as Klein Moretti, where steam technology, divination, potions, and supernatural powers shape a dangerous hidden society. As he rises through mysterious abilities and secret organizations, he uncovers a deep conspiracy that threatens the world.
-      </div>
+      <div class="story">Zhou Mingrui wakes up in a Victorian-style world as Klein Moretti, where steam technology, divination, potions, and supernatural powers shape a dangerous hidden society. As he rises through mysterious abilities and secret organizations, he uncovers a deep conspiracy that threatens the world.</div>
     </div>
 
     <div class="box">
@@ -202,6 +172,11 @@
     <div class="howto">
       <a href="YOUR_LINK" target="_blank" rel="noopener noreferrer">How To Download</a>
     </div>
+
+    <div class="box">
+      <h2><i class="fas fa-envelope"></i> CONTACT</h2>
+      <div class="story">Email: syedzaidjavaid@gmail.com<br>Telegram: @AtozCartoonsPremium</div>
+    </div>
   </div>
 
   <div class="footer">
@@ -214,7 +189,6 @@
     const searchToggle = document.getElementById('searchToggle');
     const searchBox = document.getElementById('searchBox');
     const brandTitle = document.getElementById('brandTitle');
-
     searchToggle.addEventListener('click', () => {
       const active = searchBox.classList.toggle('active');
       brandTitle.classList.toggle('hide', active);
