@@ -19,25 +19,28 @@
       display:flex;align-items:center;gap:10px;
       padding:14px 15px;
     }
-    .menu-btn{
-      width:42px;height:42px;border:none;background:transparent;color:#fff;
-      font-size:28px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;
-    }
+
     .brand{
-      display:flex;align-items:center;gap:10px;color:#ff4757;font-weight:800;
-      font-size:20px;cursor:pointer;min-width:0;white-space:nowrap;overflow:hidden;
-      text-overflow:ellipsis;flex:1;
+      display:flex;align-items:center;gap:10px;
+      color:#ff4757;font-weight:800;font-size:20px;
+      min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+      flex:1;
       transition:.2s ease;
     }
-    .brand.hide{opacity:0;transform:translateX(10px);pointer-events:none}
+    .brand.hide{
+      opacity:0;transform:translateX(-10px);pointer-events:none;width:0;min-width:0;flex:0;
+    }
 
     .search-toggle{
-      width:42px;height:42px;border-radius:50%;border:none;background:#ff4757;
-      color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+      width:42px;height:42px;border-radius:50%;
+      border:none;background:#ff4757;color:#fff;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;flex:0 0 auto;
       margin-left:auto;
     }
+
     .search-head{
-      display:none;align-items:center;gap:8px;flex:1;justify-content:flex-end;
+      display:none;align-items:center;gap:8px;
+      flex:1;min-width:0;justify-content:flex-end;
     }
     .search-head.active{display:flex}
     .search-head input{
@@ -56,7 +59,17 @@
     .open-hero .text{position:absolute;left:16px;bottom:16px;right:16px}
     .open-hero h1{font-size:24px;color:#fff;margin-bottom:6px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
     .open-hero p{color:#ddd;font-size:14px;line-height:1.7}
-    .poster{width:100%;max-width:360px;margin:18px auto 0;display:block;border-radius:16px;border:3px solid #ff4757;box-shadow:0 10px 26px rgba(255,71,87,.22)}
+
+    .poster{
+      width:100%;
+      max-width:360px;
+      margin:18px auto 0;
+      display:block;
+      border-radius:16px;
+      border:3px solid #ff4757;
+      box-shadow:0 10px 26px rgba(255,71,87,.22)
+    }
+
     .box{margin-top:18px;background:linear-gradient(145deg,#1a1a1a,#111);border:1px solid #2b2b2b;border-radius:16px;padding:18px}
     .box h2{color:#ff4757;font-size:20px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #ff4757;display:flex;align-items:center;gap:8px}
     table{width:100%;border-collapse:collapse}
@@ -78,6 +91,7 @@
     .footer{margin-top:26px;background:linear-gradient(135deg,#111,#0a0a0a);border-top:2px solid #ff4757;padding:22px 15px 26px;text-align:center}
     .footer p{color:#a0a0a0;font-size:14px;line-height:1.8}
     .footer .copyright{color:#ff4757;font-weight:800;margin-top:8px}
+
     @media (max-width: 768px){
       .wrap{padding:12px}
       .open-hero img{height:200px}
@@ -89,15 +103,13 @@
 </head>
 <body>
   <div class="topbar">
-    <button class="menu-btn" type="button"><i class="fas fa-bars"></i></button>
-
-    <div class="brand" id="brandTitle" onclick="window.location.href='/'">
+    <div class="brand" id="brandTitle">
       <i class="fas fa-play-circle"></i> Atoz Cartoons Premium
     </div>
 
     <form class="search-head" id="searchBox" onsubmit="return false;">
-      <input type="text" placeholder="Search posts..." />
-      <button type="button"><i class="fas fa-search"></i></button>
+      <input id="searchInput" type="search" placeholder="Search posts..." />
+      <button id="searchBtn" type="button"><i class="fas fa-search"></i></button>
     </form>
 
     <button class="search-toggle" id="searchToggle" type="button"><i class="fas fa-search"></i></button>
@@ -186,13 +198,33 @@
 
   <script>
     document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+
     const searchToggle = document.getElementById('searchToggle');
     const searchBox = document.getElementById('searchBox');
     const brandTitle = document.getElementById('brandTitle');
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+
+    function doSearch() {
+      const q = searchInput.value.trim().toLowerCase();
+      if (!q) return;
+      const cards = document.querySelectorAll('.ep, .box, .howto');
+      cards.forEach(card => {
+        const txt = card.innerText.toLowerCase();
+        card.style.display = txt.includes(q) ? '' : 'none';
+      });
+      document.querySelector('.ep-title').style.display = '';
+    }
+
     searchToggle.addEventListener('click', () => {
       const active = searchBox.classList.toggle('active');
       brandTitle.classList.toggle('hide', active);
-      if (active) searchBox.querySelector('input').focus();
+      if (active) searchInput.focus();
+    });
+
+    searchBtn.addEventListener('click', doSearch);
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') doSearch();
     });
   </script>
 </body>
