@@ -33,39 +33,75 @@
     }
     .logo i{font-size:22px}
 
-    .header-search{
-      display:flex;align-items:center;gap:8px;
-      flex:1;max-width:560px;min-width:0;justify-content:flex-end;
-    }
+  .header-search{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  max-width: 560px;
+}
 
-    .search-icon{
-      width:42px;height:42px;border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      background:#171717;border:1px solid #2d2d2d;
-      color:#ff4757;cursor:pointer;flex:0 0 auto;
-    }
+.search-icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #171717;
+  border: 1px solid #2d2d2d;
+  color: #ff4757;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
 
-    .search-form{
-      display:flex;align-items:center;
-      width:100%;max-width:420px;
-      border:1px solid #2d2d2d;border-radius:999px;
-      overflow:hidden;background:#0d0d0d;
-      transform:translateY(-6px) scale(.96);
-      opacity:0;pointer-events:none;
-      transition:.25s ease;
-    }
-    .search-form.open{
-      transform:translateY(0) scale(1);
-      opacity:1;pointer-events:auto;
-    }
-    .search-form input{
-      flex:1;padding:13px 16px;border:0;outline:0;
-      background:transparent;color:#fff;font-size:15px;min-width:0;
-    }
-    .search-btn{
-      width:52px;border:0;background:transparent;
-      color:#ff4757;cursor:pointer;flex:0 0 auto;
-    }
+.search-form{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 560px;
+  border: 1px solid #2d2d2d;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #0d0d0d;
+
+  transform: translateY(-6px) scale(.96);
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s ease;
+}
+
+.search-form.open{
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-form input{
+  flex: 1;
+  width: 100%;
+  padding: 13px 16px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  min-width: 0;
+}
+
+.search-btn{
+  width: 52px;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  color: #ff4757;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
 
     .menu-btn{
       font-size:24px;color:#fff;cursor:pointer;flex:0 0 auto;
