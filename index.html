@@ -8,20 +8,21 @@
 
   <meta name="robots" content="index, follow">
 
-<meta property="og:title" content="Atoz Cartoons Premium">
-<meta property="og:site_name" content="Atoz Cartoons Premium">
-<meta property="og:type" content="website">
+  <meta property="og:title" content="Atoz Cartoons Premium">
+  <meta property="og:site_name" content="Atoz Cartoons Premium">
+  <meta property="og:type" content="website">
 
-<link rel="canonical" href="https://atozcartoonspremium.vercel.app/">
+  <link rel="canonical" href="https://atozcartoonspremium.vercel.app/">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Atoz Cartoons Premium",
-  "url": "https://atozcartoonspremium.vercel.app/"
-}
-</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Atoz Cartoons Premium",
+    "url": "https://atozcartoonspremium.vercel.app/"
+  }
+  </script>
+
   <link rel="icon" type="image/jpeg" href="favicon.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -181,7 +182,13 @@
       display:inline-block;padding:5px 9px;border-radius:6px;
       background:#ff4757;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase
     }
-    .card h3{font-size:13px;line-height:1.0;height:38px;overflow:hidden;color:#fff}
+    .card h3{
+      font-size:13px;
+      line-height:1.2;
+      height:38px;
+      overflow:hidden;
+      color:#fff;
+    }
     .view-btn{
       margin-top:10px;background:linear-gradient(45deg,#ff4757,#ff6b57);
       text-align:center;color:#fff;padding:11px;border-radius:8px;font-weight:700
@@ -364,6 +371,7 @@
     const postGrid = document.getElementById('postGrid');
     const noResults = document.getElementById('noResults');
     const pagination = document.getElementById('pagination');
+    const heroSection = document.getElementById('heroSection');
 
     let allPosts = [];
     let filteredPosts = [];
@@ -449,6 +457,8 @@
       const safePage = Math.min(page, totalPages);
       const start = (safePage - 1) * perPage;
       const items = filteredPosts.slice(start, start + perPage);
+
+      heroSection.style.display = safePage === 1 ? 'block' : 'none';
 
       postGrid.innerHTML = '';
       items.forEach(post => postGrid.appendChild(createCard(post)));
