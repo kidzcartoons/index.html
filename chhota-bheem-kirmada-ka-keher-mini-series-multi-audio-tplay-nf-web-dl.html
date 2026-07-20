@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chhota Bheem Kirmada Ka Keher Mini Series Multi Audio TPLAY & NF WEB-DL - Atoz Cartoons Premium</title>
+  <link rel="icon" type="image/jpeg" href="favicon.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:#0a0a0a;color:#e8e8e8;font-family:Segoe UI,Tahoma,Verdana,sans-serif}
+    a{text-decoration:none;color:inherit}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:9999;
+      background:linear-gradient(135deg,#161616,#0d0d0d);
+      border-bottom:1px solid #272727;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:14px 15px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:#ff4757;
+      font-weight:800;
+      font-size:20px;
+      cursor:pointer;
+      min-width:0;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      flex:1;
+      transition:.2s ease;
+    }
+
+    .search-toggle{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      border:none;
+      background:#ff4757;
+      color:#fff;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex:0 0 auto;
+      margin-left:auto;
+    }
+
+    .search-head{
+      display:none;
+      align-items:center;
+      gap:8px;
+      flex:1;
+      min-width:0;
+      justify-content:flex-end;
+    }
+    .search-head.active{display:flex}
+
+    .search-head input{
+      flex:1;
+      min-width:0;
+      border:none;
+      outline:none;
+      background:#111;
+      color:#fff;
+      border-radius:999px;
+      padding:12px 16px;
+      border:1px solid #2a2a2a;
+    }
+
+    .search-head button{
+      border:none;
+      background:#ff4757;
+      color:#fff;
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      cursor:pointer;
+      flex:0 0 auto;
+    }
+
+    .wrap{max-width:1000px;margin:auto;padding:15px}
+
+    .open-hero{
+      position:relative;
+      border-radius:18px;
+      overflow:hidden;
+      background:#111;
+      border:1px solid #2a2a2a;
+      box-shadow:0 12px 28px rgba(0,0,0,.25)
+    }
+    .open-hero img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      display:block
+    }
+    .open-hero .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top,rgba(0,0,0,.8),rgba(0,0,0,.15))
+    }
+    .open-hero .text{
+      position:absolute;
+      left:16px;
+      bottom:16px;
+      right:16px
+    }
+    .open-hero h1{
+      font-size:24px;
+      color:#fff;
+      margin-bottom:6px;
+      text-shadow:0 2px 10px rgba(0,0,0,.45)
+    }
+    .open-hero p{
+      color:#ddd;
+      font-size:14px;
+      line-height:1.7
+    }
+
+    .poster{
+      width:100%;
+      max-width:100%;
+      margin:18px auto 0;
+      display:block;
+      border-radius:16px;
+      border:3px solid #ff4757;
+      box-shadow:0 10px 26px rgba(255,71,87,.22);
+      object-fit:contain;
+      background:#000
+    }
+
+    .box{
+      margin-top:18px;
+      background:linear-gradient(145deg,#1a1a1a,#111);
+      border:1px solid #2b2b2b;
+      border-radius:16px;
+      padding:18px
+    }
+    .box h2{
+      color:#ff4757;
+      font-size:20px;
+      margin-bottom:14px;
+      padding-bottom:10px;
+      border-bottom:2px solid #ff4757;
+      display:flex;
+      align-items:center;
+      gap:8px
+    }
+
+    .howto{
+      margin-top:18px;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid #2b2b2b;
+      background:#10131a;
+      padding:22px 18px;
+      text-align:center;
+    }
+    .howto a{
+      display:block;
+      padding:16;
+      color:#66a6ff;
+      font-weight:800;
+      text-align:center
+    }
+
+    table{width:100%;border-collapse:collapse}
+    td{padding:10px 0;font-size:14px;vertical-align:top}
+    td:first-child{color:#ff4757;font-weight:700;width:40%}
+
+    .story{
+      line-height:1.9;
+      color:#cfcfcf;
+      font-size:15px
+    }
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px
+    }
+    .tag{
+      padding:6px 10px;
+      border-radius:999px;
+      background:#222;
+      border:1px solid #2d2d2d;
+      font-size:11px;
+      font-weight:700;
+      text-transform:uppercase
+    }
+
+    .ep-title{
+      margin:26px 0 14px;
+      font-size:22px;
+      font-weight:800;
+      border-left:4px solid #ff4757;
+      padding-left:12px
+    }
+
+    .ep{
+      background:linear-gradient(145deg,#1a1a1a,#111);
+      border:1px solid #2a2a2a;
+      border-radius:16px;
+      padding:16px;
+      margin-bottom:14px
+    }
+    .ep h3{
+      font-size:18px;
+      margin-bottom:10px;
+      color:#fff;
+      text-align:center
+    }
+    .btns{
+      display:grid;
+      gap:10px;
+      margin-top:10px
+    }
+    .btn{
+      display:block;
+      text-align:center;
+      padding:14px 12px;
+      border-radius:10px;
+      color:#fff;
+      font-weight:800;
+      font-size:14px;
+      transition:.2s
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .drive{background:linear-gradient(45deg,#1e88e5,#42a5f5)}
+    .mega{background:linear-gradient(45deg,#ff5252,#ff7043)}
+
+    .footer{
+      margin-top:26px;
+      background:linear-gradient(135deg,#111,#0a0a0a);
+      border-top:2px solid #ff4757;
+      padding:22px 15px 26px;
+      text-align:center
+    }
+    .footer p{
+      color:#a0a0a0;
+      font-size:14px;
+      line-height:1.8
+    }
+    .footer .copyright{
+      color:#ff4757;
+      font-weight:800;
+      margin-top:8px
+    }
+
+    @media (max-width:768px){
+      .wrap{padding:12px}
+      .open-hero img{height:200px}
+      .box{padding:16px}
+      .howto{padding:18px 14px}
+      .howto h2{font-size:20px}
+      td:first-child{width:42%}
+      .brand{font-size:18px}
+      .poster{max-width:100%}
+    }
+
+    @media (min-width:769px) and (max-width:1199px){
+      .poster{max-width:820px}
+    }
+
+    @media (min-width:1200px){
+      .poster{max-width:980px}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand" id="brandTitle" onclick="window.location.href='/'">
+      <i class="fas fa-play-circle"></i> Atoz Cartoons Premium
+    </div>
+
+    <form class="search-head" id="searchBox" onsubmit="return false;">
+      <input id="searchInput" type="search" placeholder="Type here to search…" />
+      <button id="searchBtn" type="button"><i class="fas fa-search"></i></button>
+    </form>
+
+    <button class="search-toggle" id="searchToggle" type="button">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+
+  <div class="wrap">
+    <div class="open-hero">
+      <img src="https://i.postimg.cc/d1LkPC2b/Chhota-Bheem-In-Damayaan-s-Legacy-Atoz-Cartoons-Premium.png" alt="Atoz Cartoons Premium Chhota Bheem In Damayaan's Legacy">
+      <div class="overlay"></div>
+      <div class="text">
+        <h1>Chhota Bheem Kirmada Ka Keher</h1>
+        <p>Chhota Bheem and his friends travel to the magical kingdom of Achrajpur...</p>
+      </div>
+    </div>
+
+    <img class="poster" src="https://i.postimg.cc/DZW5z8QD/Atoz-Cartoons-Premium-Chhota-Bheem-In-Damayaan-s-Legacy.png" alt="Atoz Cartoons Premium - Chhota Bheem In Damayaan's Legacy">
+
+    <div class="box">
+      <h2><i class="fas fa-info-circle"></i> DETAILS</h2>
+      <table>
+        <tr><td>Title</td><td>Chhota Bheem Kirmada Ka Keher</td></tr>
+        <tr><td>Release Year</td><td>2026</td></tr>
+        <tr><td>Genre</td><td>Animation • Action • Adventure</td></tr>
+        <tr><td>Episodes</td><td>03</td></tr>
+        <tr><td>Quality</td><td>480p TPLAY WEB-DL & 1080p NF WEB-DL (AVC)</td></tr>
+        <tr><td>Language</td><td>NF Audios ~ Hindi  -  Tamil  -  Telugu  -  English (DDP 5.1 - 224kbps) + TPLAY Audios ~ Hindi  -  Tamil  -  Telugu  -  Malayalam  -  Kannada  -  Marathi (AAC 2.0 - 128kbps)</td></tr>
+        <tr><td>Duration</td><td>43-45 Minutes (Per Episode)</td></tr>
+        <tr><td>TV</td><td>Tataplay</td></tr>
+        <tr><td>Uploader</td><td>Atoz Cartoons Premium</td></tr>
+      </table>
+
+      <div class="tags">
+        <span class="tag">MINI SERIES</span>
+        <span class="tag">HINDI DUBBED</span>
+        <span class="tag">TATAPLAY</span>
+      </div>
+    </div>
+
+    <div class="box">
+      <h2><i class="fas fa-book"></i> STORY</h2>
+      <div class="story">
+        Chhota Bheem and his friends travel to the magical kingdom of Achrajpur to help Princess Amrita protect its powerful magic. But when dangerous villains Takshika and Skandi attack with a mysterious army, Bheem discovers that nothing in the kingdom is as it seems. With secrets revealed and a fierce battle underway, Bheem must fight to save Achrajpur and his friends from a magical nightmare.</div>
+    </div>
+
+    <div class="box">
+      <h2><i class="fab fa-telegram-plane"></i> JOIN US ON TELEGRAM</h2>
+      <div class="story" style="text-align:center">
+        <a href="https://t.me/+yt1dK4iKsR44ZTU0" target="_blank" rel="noopener noreferrer" style="color:#5ab7ff;font-weight:800">Open Telegram Channel</a>
+      </div>
+    </div>
+
+   <div class="ep-title">Part 1</div>
+    
+     <div class="ep">
+      <div class="btns">
+        <a class="btn drive" href="https://gplinks.co/hsLzPAtO">Google Drive - Watch/Download - 367MB</a>
+        <a class="btn mega" href="https://gplinks.co/25jaWp">Mega Nz - Watch/Download - 367MB</a>
+      </div>
+    </div>
+
+    <div class="ep-title">Part 2</div>
+    
+     <div class="ep">
+      <div class="btns">
+        <a class="btn drive" href="https://gplinks.co/K9dM">Google Drive - Watch/Download - 374MB</a>
+        <a class="btn mega" href="https://gplinks.co/OfBy0nVe">Mega Nz - Watch/Download - 374MB</a>
+      </div>
+     </div>
+
+    <div class="ep-title">Part 3</div>
+    
+     <div class="ep">
+      <div class="btns">
+        <a class="btn drive" href="https://gplinks.co/THNrH">Google Drive - Watch/Download - 368MB</a>
+        <a class="btn mega" href="https://gplinks.co/g35Cyo">Mega Nz - Watch/Download - 368MB</a>
+      </div>
+     </div>
+    
+   <p style="
+  text-align:center;
+  font-weight:bold;
+  font-size:clamp(20px, 4vw, 28px);
+">
+  COMPLETED SERIES ADDED
+</p>
+
+    <div class="howto">
+      <a href="https://drive.google.com/file/d/12RsbKhOsXehCb4--6rKULm7Eg73mbptB/view?usp=sharing" target="_blank" rel="noopener noreferrer">How To Download</a>
+    </div>
+
+    <div class="box">
+      <h2><i class="fas fa-envelope"></i> CONTACT</h2>
+      <div class="story">
+        Email: syedzaidjavaid@gmail.com<br>
+        Telegram: @AtozCartoonsPremium
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Atoz Cartoons Premium - Premium Cartoons, Anime, Movies & OTT Collection</p>
+    <p class="copyright">© <span id="copyrightYear"></span> Atoz Cartoons Premium. All Rights Reserved.</p>
+  </div>
+
+  <script>
+    document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+
+    const searchToggle = document.getElementById('searchToggle');
+    const searchBox = document.getElementById('searchBox');
+    const brandTitle = document.getElementById('brandTitle');
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+
+    function goSearch() {
+      const q = searchInput.value.trim();
+      if (!q) return;
+      window.location.href = '/?q=' + encodeURIComponent(q);
+    }
+
+    searchToggle.addEventListener('click', () => {
+      const active = searchBox.classList.toggle('active');
+      brandTitle.style.display = active ? 'none' : 'flex';
+      if (active) searchInput.focus();
+      if (!active) searchInput.value = '';
+    });
+
+    searchBtn.addEventListener('click', goSearch);
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') goSearch();
+    });
+  </script>
+</body>
+</html>
