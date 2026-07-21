@@ -173,6 +173,18 @@
     }
     .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
     .card{
+      .card{
+    position: relative;
+}
+
+.pin-badge{
+    position:absolute;
+    top:-10px;
+    right:10px;
+    font-size:22px;
+    transform:rotate(20deg);
+    z-index:999;
+}
       background:linear-gradient(145deg,#1b1b1b,#121212);
       border:1px solid #282828;border-radius:14px;overflow:hidden;
       transition:.25s;cursor:pointer
@@ -419,6 +431,7 @@
       const card = document.createElement('div');
       card.className = 'card';
       card.innerHTML = `
+        ${post.pinned ? '<span class="pin-badge">📌</span>' : ''}
         <img src="${post.image || ''}" alt="${post.title || ''}">
         <div class="card-info">
           <div class="tag-row">
