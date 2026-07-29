@@ -12,6 +12,34 @@
     body{background:#0a0a0a;color:#e8e8e8;font-family:Segoe UI,Tahoma,Verdana,sans-serif}
     a{text-decoration:none;color:inherit}
 
+    .popup-soon{
+  display:none;
+  position:absolute;
+  z-index:9999;
+  min-width:170px;
+  background:#fff;
+  color:#111;
+  border:1px solid #ccc;
+  border-radius:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.18);
+  padding:12px;
+}
+.popup-soon .msg{
+  text-align:center;
+  font-size:15px;
+  margin-bottom:10px;
+  font-weight:600;
+}
+.popup-soon button{
+  width:100%;
+  border:0;
+  border-radius:8px;
+  padding:8px 10px;
+  background:#111;
+  color:#fff;
+  cursor:pointer;
+}
+
     .topbar{
       position:sticky;
       top:0;
@@ -279,6 +307,11 @@
 </head>
 <body>
 
+  <div id="soonPopup" class="popup-soon">
+  <div class="msg">Coming Soon</div>
+  <button type="button" onclick="closeSoonPopup()">Ok</button>
+  </div>
+
   <div class="topbar">
     <div class="brand" id="brandTitle" onclick="window.location.href='/'">
       <i class="fas fa-play-circle"></i> Atoz Cartoons Premium
@@ -364,57 +397,7 @@
     <div class="ep">
       <h3>1080p AAC 2.0 AVC</h3>
       <div class="btns">
-        <a class="btn drive" href="javascript:void(0)" onclick="showComingSoon(this)">Google Drive - Watch/Download - 1.17GB</a>
-
-<style>
-  .clip-popup{
-    display:none;
-    position:absolute;
-    z-index:9999;
-    min-width:160px;
-    background:#fff;
-    border:1px solid #ccc;
-    border-radius:10px;
-    box-shadow:0 8px 24px rgba(0,0,0,.18);
-    padding:12px;
-    font-family:Arial,sans-serif;
-  }
-  .clip-popup .msg{
-    margin:0 0 10px;
-    font-size:15px;
-    color:#222;
-    text-align:center;
-  }
-  .clip-popup button{
-    display:block;
-    width:100%;
-    border:0;
-    border-radius:8px;
-    padding:8px 10px;
-    background:#111;
-    color:#fff;
-    cursor:pointer;
-  }
-</style>
-
-<div id="clipPopup" class="clip-popup">
-  <div class="msg">Coming Soon</div>
-  <button type="button" onclick="closeComingSoon()">Ok</button>
-</div>
-
-<script>
-  function showComingSoon(el){
-    const pop = document.getElementById('clipPopup');
-    const r = el.getBoundingClientRect();
-    pop.style.left = (window.scrollX + r.right + 10) + 'px';
-    pop.style.top = (window.scrollY + r.top) + 'px';
-    pop.style.display = 'block';
-  }
-
-  function closeComingSoon(){
-    document.getElementById('clipPopup').style.display = 'none';
-  }
-</script>
+        <a class="btn drive" href="javascript:void(0)" onclick="openSoonPopup(this)">Google Drive - Watch/Download - 1.17GB</a> 
         <a class="btn mega" href="https://gplinks.co/O5MjDc">Mega Nz - Watch/Download - 1.17GB</a>
       </div>
     </div>
