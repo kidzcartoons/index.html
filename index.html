@@ -169,38 +169,64 @@
       display:flex;align-items:center;gap:10px
     }
     .section-title i{
-  color:#ff4757;
+      color:#ff4757;
     }
     .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
     .card{
-background:linear-gradient(145deg,#1b1b1b,#121212);
-border:1px solid #282828;border-radius:14px;overflow:hidden;
-transition:.25s;cursor:pointer
-{
-position:absolute;
-background:linear-gradient(145deg,#1e1e1e,#151515);
-border:1px solid #282828;
-border-radius:18px;
-overflow:visible;
-transition:.25s;
-cursor:pointer;
-}
-.pin-badge{
-position:absolute;
-top:8px;
-right:8px;
-font-size:24px;
-pointer-events:none;
-}
-}
-    .card:hover{transform:translateY(-6px);border-color:#ff4757;box-shadow:0 10px 26px rgba(255,71,87,.25)}
-    .card img{width:100%;height:270px;object-fit:cover;display:block}
-    .card-info{padding:13px}
-    .tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-    .tag{
-      display:inline-block;padding:5px 9px;border-radius:6px;
-      background:#ff4757;color:#fff;font-size:10px;font-weight:700;text-transform:uppercase
+      position:relative;
+      background:linear-gradient(145deg,#1b1b1b,#121212);
+      border:1px solid #282828;
+      border-radius:14px;
+      overflow:hidden;
+      transition:.25s;
+      cursor:pointer;
     }
+
+    .pin-badge{
+      position:absolute;
+      top:8px;
+      right:8px;
+      font-size:24px;
+      pointer-events:none;
+      z-index:2;
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:#ff4757;
+      box-shadow:0 10px 26px rgba(255,71,87,.25);
+    }
+
+    .card img{
+      width:100%;
+      height:270px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .card-info{
+      padding:13px;
+    }
+
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      margin-bottom:10px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:5px 9px;
+      border-radius:6px;
+      background:#ff4757;
+      color:#fff;
+      font-size:10px;
+      font-weight:700;
+      text-transform:uppercase;
+    }
+
     .card h3{
       font-size:13px;
       line-height:1.0;
@@ -208,61 +234,180 @@ pointer-events:none;
       overflow:hidden;
       color:#fff;
     }
+
     .view-btn{
-      margin-top:10px;background:linear-gradient(45deg,#ff4757,#ff6b57);
-      text-align:center;color:#fff;padding:11px;border-radius:8px;font-weight:700
+      margin-top:10px;
+      background:linear-gradient(45deg,#ff4757,#ff6b57);
+      text-align:center;
+      color:#fff;
+      padding:11px;
+      border-radius:8px;
+      font-weight:700;
     }
 
-    .tabs{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 8px}
+    .tabs{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:18px 0 8px;
+    }
+
     .tab{
-      background:#171717;border:1px solid #2b2b2b;color:#fff;
-      padding:10px 14px;border-radius:999px;font-size:13px;cursor:pointer;
-      transition:.2s;text-transform:uppercase
+      background:#171717;
+      border:1px solid #2b2b2b;
+      color:#fff;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:13px;
+      cursor:pointer;
+      transition:.2s;
+      text-transform:uppercase;
     }
-    .tab:hover,.tab.active{background:#ff4757;border-color:#ff4757}
-    .submenu-row{display:none;gap:10px;flex-wrap:wrap;margin:10px 0 4px}
-    .submenu-row.active{display:flex}
-    .submenu{
-      background:#141414;border:1px solid #2a2a2a;color:#ddd;
-      padding:9px 13px;border-radius:999px;font-size:12px;cursor:pointer
-    }
-    .submenu:hover{border-color:#ff4757;color:#ff4757}
-    .coming-soon{text-align:center;color:#9c9c9c;padding:28px 10px;font-size:15px}
-    .pagination{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:22px 0 0}
-    .page-link{
-      padding:10px 14px;border-radius:10px;border:1px solid #2b2b2b;
-      background:#171717;color:#fff;min-width:42px;text-align:center
-    }
-    .page-link.active{background:#ff4757;border-color:#ff4757}
 
-    .social-box{max-width:1200px;margin:30px auto 0;padding:0 15px}
+    .tab:hover,.tab.active{
+      background:#ff4757;
+      border-color:#ff4757;
+    }
+
+    .submenu-row{
+      display:none;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:10px 0 4px;
+    }
+
+    .submenu-row.active{
+      display:flex;
+    }
+
+    .submenu{
+      background:#141414;
+      border:1px solid #2a2a2a;
+      color:#ddd;
+      padding:9px 13px;
+      border-radius:999px;
+      font-size:12px;
+      cursor:pointer;
+    }
+
+    .submenu:hover{
+      border-color:#ff4757;
+      color:#ff4757;
+    }
+
+    .coming-soon{
+      text-align:center;
+      color:#9c9c9c;
+      padding:28px 10px;
+      font-size:15px;
+    }
+
+    .pagination{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin:22px 0 0;
+    }
+
+    .page-link{
+      padding:10px 14px;
+      border-radius:10px;
+      border:1px solid #2b2b2b;
+      background:#171717;
+      color:#fff;
+      min-width:42px;
+      text-align:center;
+    }
+
+    .page-link.active{
+      background:#ff4757;
+      border-color:#ff4757;
+    }
+
+    .social-box{
+      max-width:1200px;
+      margin:30px auto 0;
+      padding:0 15px;
+    }
+
     .social-inner{
       background:linear-gradient(145deg,#171717,#101010);
-      border:1px solid #2a2a2a;border-radius:16px;padding:18px;text-align:center
+      border:1px solid #2a2a2a;
+      border-radius:16px;
+      padding:18px;
+      text-align:center;
     }
-    .social-inner h2{color:#ff4757;margin-bottom:14px;font-size:20px}
-    .social-icons{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-    .social-icons a{
-      width:46px;height:46px;border-radius:50%;
-      display:flex;align-items:center;justify-content:center;
-      background:#1f1f1f;border:1px solid #2d2d2d;color:#fff;
-      font-size:18px;transition:.2s
-    }
-    .social-icons a:hover{transform:translateY(-3px);border-color:#ff4757;color:#ff4757}
 
-    .join-telegram{max-width:1200px;margin:18px auto 0;padding:0 15px}
+    .social-inner h2{
+      color:#ff4757;
+      margin-bottom:14px;
+      font-size:20px;
+    }
+
+    .social-icons{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .social-icons a{
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#1f1f1f;
+      border:1px solid #2d2d2d;
+      color:#fff;
+      font-size:18px;
+      transition:.2s;
+    }
+
+    .social-icons a:hover{
+      transform:translateY(-3px);
+      border-color:#ff4757;
+      color:#ff4757;
+    }
+
+    .join-telegram{
+      max-width:1200px;
+      margin:18px auto 0;
+      padding:0 15px;
+    }
+
     .join-telegram .box{
       background:linear-gradient(45deg,#1089ff,#2f9bff);
-      color:#fff;border-radius:16px;padding:18px;text-align:center;
-      font-weight:800;box-shadow:0 8px 22px rgba(16,137,255,.25);cursor:pointer
+      color:#fff;
+      border-radius:16px;
+      padding:18px;
+      text-align:center;
+      font-weight:800;
+      box-shadow:0 8px 22px rgba(16,137,255,.25);
+      cursor:pointer;
     }
 
     .footer{
-      margin-top:26px;background:linear-gradient(135deg,#111,#0a0a0a);
-      border-top:2px solid #ff4757;padding:22px 15px 26px;text-align:center
+      margin-top:26px;
+      background:linear-gradient(135deg,#111,#0a0a0a);
+      border-top:2px solid #ff4757;
+      padding:22px 15px 26px;
+      text-align:center;
     }
-    .footer p{color:#a0a0a0;font-size:14px;line-height:1.8}
-    .footer .copyright{color:#ff4757;font-weight:800;margin-top:8px}
+
+    .footer p{
+      color:#a0a0a0;
+      font-size:14px;
+      line-height:1.8;
+    }
+
+    .footer .copyright{
+      color:#ff4757;
+      font-weight:800;
+      margin-top:8px;
+    }
 
     @media(min-width:700px){
       .grid{grid-template-columns:repeat(4,1fr)}
@@ -324,11 +469,49 @@ pointer-events:none;
       <div class="tab" onclick="showMain('dmca', this)">DMCA</div>
     </div>
 
-    <div id="submenu-cartoons" class="submenu-row"><div class="submenu" onclick="filterByTag('Hindi Dubbed')">Hindi Dubbed</div><div class="submenu" onclick="filterByTag('English Dub')">English Dub</div><div class="submenu" onclick="filterByTag('English Sub')">English Sub</div></div>
-    <div id="submenu-anime" class="submenu-row"><div class="submenu"><a href="https://atozcartoonspremium.vercel.app/?q=Hin+Dub" target="_blank" rel="noopener">Hin Dub</a></div><div class="submenu" onclick="filterByTag('Eng Dub')">Eng Dub</div><div class="submenu" onclick="filterByTag('Eng Sub')">Eng Sub</div></div>
-    <div id="submenu-movies" class="submenu-row"><div class="submenu" onclick="filterByTag('Animated Movies')">Animated Movies</div><div class="submenu" onclick="filterByTag('Anime Movies')">Anime Movies</div><div class="submenu" onclick="filterByTag('Mini Series')">Mini Series</div></div>
-    <div id="submenu-tvrips" class="submenu-row"><div class="submenu" onclick="filterByTag('TataPlay')">TataPlay</div><div class="submenu" onclick="filterByTag('JioTv')">JioTv</div><div class="submenu" onclick="filterByTag('Airtel TV')">Airtel TV</div><div class="submenu" onclick="filterByTag('Dish TV')">Dish TV</div><div class="submenu" onclick="filterByTag('SunTv')">SunTv</div></div>
-    <div id="submenu-ott" class="submenu-row"><div class="submenu" onclick="filterByTag('Amazon Prime Video')">Amazon Prime Video</div><div class="submenu" onclick="filterByTag('Netflix')">Netflix</div><div class="submenu" onclick="filterByTag('SonyLiv')">SonyLiv</div><div class="submenu" onclick="filterByTag('MX Player')">MX Player</div><div class="submenu" onclick="filterByTag('JioCinema')">JioCinema</div><div class="submenu" onclick="filterByTag('VootKids')">VootKids</div><div class="submenu" onclick="filterByTag('YouTube')">YouTube</div><div class="submenu" onclick="filterByTag('JioHotstar')">JioHotstar</div><div class="submenu" onclick="filterByTag('Disney+')">Disney+</div><div class="submenu" onclick="filterByTag('DisneyNow')">DisneyNow</div><div class="submenu" onclick="filterByTag('Crunchyroll')">Crunchyroll</div><div class="submenu" onclick="filterByTag('Discovery Plus')">Discovery Plus</div><div class="submenu" onclick="filterByTag('Apple Tv+')">Apple Tv+</div><div class="submenu" onclick="filterByTag('Zee5')">Zee5</div><div class="submenu" onclick="filterByTag('Waves')">Waves</div></div>
+    <div id="submenu-cartoons" class="submenu-row">
+      <div class="submenu" onclick="filterByTag('Hindi Dubbed')">Hindi Dubbed</div>
+      <div class="submenu" onclick="filterByTag('English Dub')">English Dub</div>
+      <div class="submenu" onclick="filterByTag('English Sub')">English Sub</div>
+    </div>
+
+    <div id="submenu-anime" class="submenu-row">
+      <div class="submenu" onclick="filterByTag('Hin Dub')">Hin Dub</div>
+      <div class="submenu" onclick="filterByTag('Eng Dub')">Eng Dub</div>
+      <div class="submenu" onclick="filterByTag('Eng Sub')">Eng Sub</div>
+    </div>
+
+    <div id="submenu-movies" class="submenu-row">
+      <div class="submenu" onclick="filterByTag('Animated Movies')">Animated Movies</div>
+      <div class="submenu" onclick="filterByTag('Anime Movies')">Anime Movies</div>
+      <div class="submenu" onclick="filterByTag('Mini Series')">Mini Series</div>
+    </div>
+
+    <div id="submenu-tvrips" class="submenu-row">
+      <div class="submenu" onclick="filterByTag('TataPlay')">TataPlay</div>
+      <div class="submenu" onclick="filterByTag('JioTv')">JioTv</div>
+      <div class="submenu" onclick="filterByTag('Airtel TV')">Airtel TV</div>
+      <div class="submenu" onclick="filterByTag('Dish TV')">Dish TV</div>
+      <div class="submenu" onclick="filterByTag('SunTv')">SunTv</div>
+    </div>
+
+    <div id="submenu-ott" class="submenu-row">
+      <div class="submenu" onclick="filterByTag('Amazon Prime Video')">Amazon Prime Video</div>
+      <div class="submenu" onclick="filterByTag('Netflix')">Netflix</div>
+      <div class="submenu" onclick="filterByTag('SonyLiv')">SonyLiv</div>
+      <div class="submenu" onclick="filterByTag('MX Player')">MX Player</div>
+      <div class="submenu" onclick="filterByTag('JioCinema')">JioCinema</div>
+      <div class="submenu" onclick="filterByTag('VootKids')">VootKids</div>
+      <div class="submenu" onclick="filterByTag('YouTube')">YouTube</div>
+      <div class="submenu" onclick="filterByTag('JioHotstar')">JioHotstar</div>
+      <div class="submenu" onclick="filterByTag('Disney+')">Disney+</div>
+      <div class="submenu" onclick="filterByTag('DisneyNow')">DisneyNow</div>
+      <div class="submenu" onclick="filterByTag('Crunchyroll')">Crunchyroll</div>
+      <div class="submenu" onclick="filterByTag('Discovery Plus')">Discovery Plus</div>
+      <div class="submenu" onclick="filterByTag('Apple Tv+')">Apple Tv+</div>
+      <div class="submenu" onclick="filterByTag('Zee5')">Zee5</div>
+      <div class="submenu" onclick="filterByTag('Waves')">Waves</div>
+    </div>
 
     <div id="main-home">
       <div class="section-title"><i class="fas fa-fire"></i> LATEST POSTS</div>
@@ -507,11 +690,19 @@ pointer-events:none;
         if(node) node.style.display='none';
       });
       document.getElementById('main-home').style.display='block';
+
       const target = normalizeText(tag);
       filteredPosts = allPosts.filter(p => {
         const tags = Array.isArray(p.tags) ? p.tags : [];
         return normalizeText(p.category) === target || tags.some(t => normalizeText(t) === target);
       });
+
+      const url = new URL(window.location.href);
+      url.searchParams.set('q', tag);
+      url.searchParams.delete('page');
+      window.history.replaceState({}, '', url.pathname + url.search);
+
+      searchInput.value = tag;
       renderPage(1);
     }
 
