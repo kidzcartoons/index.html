@@ -12,34 +12,6 @@
     body{background:#0a0a0a;color:#e8e8e8;font-family:Segoe UI,Tahoma,Verdana,sans-serif}
     a{text-decoration:none;color:inherit}
 
-    .popup-soon{
-  display:none;
-  position:absolute;
-  z-index:9999;
-  min-width:170px;
-  background:#fff;
-  color:#111;
-  border:1px solid #ccc;
-  border-radius:10px;
-  box-shadow:0 8px 24px rgba(0,0,0,.18);
-  padding:12px;
-}
-.popup-soon .msg{
-  text-align:center;
-  font-size:15px;
-  margin-bottom:10px;
-  font-weight:600;
-}
-.popup-soon button{
-  width:100%;
-  border:0;
-  border-radius:8px;
-  padding:8px 10px;
-  background:#111;
-  color:#fff;
-  cursor:pointer;
-}
-
     .topbar{
       position:sticky;
       top:0;
@@ -307,11 +279,6 @@
 </head>
 <body>
 
-  <div id="soonPopup" class="popup-soon">
-  <div class="msg">We will add it tomorrow night</div>
-  <button type="button" onclick="closeSoonPopup()">Ok</button>
-  </div>
-
   <div class="topbar">
     <div class="brand" id="brandTitle" onclick="window.location.href='/'">
       <i class="fas fa-play-circle"></i> Atoz Cartoons Premium
@@ -350,6 +317,7 @@
         <tr><td>Duration</td><td>2h 34min</td></tr>
         <tr><td>Subtitle</td><td>English</td></tr>
         <tr><td>OTT</td><td>Crunchyroll + Amazon Prime Video</td></tr>
+        <tr><td>Thanks</td><td>DEVIL & LUFFY</td></tr>
         <tr><td>Uploader</td><td>Atoz Cartoons Premium</td></tr>
       </table>
 
@@ -397,8 +365,8 @@
     <div class="ep">
       <h3>1080p AAC 2.0 AVC</h3>
       <div class="btns">
-        <a class="btn drive" href="javascript:void(0)" onclick="openSoonPopup(this)">Google Drive - Watch/Download - 0.00GB</a> 
-        <a class="btn mega" href="javascript:void(0)" onclick="openSoonPopup(this)">Mega Nz - Watch/Download - 0.00GB</a>
+        <a class="btn drive" href="https://gplinks.co/3wVYp28">Google Drive - Watch/Download - 9.68GB</a> 
+        <a class="btn mega" href="https://gplinks.co/waq7">Mega Nz - Watch/Download - 9.68GB</a>
       </div>
     </div>
 
@@ -435,8 +403,8 @@
     <div class="ep">
       <h3>1080p DDP 5.1 AVC</h3>
       <div class="btns">
-        <a class="btn drive" href="javascript:void(0)" onclick="openSoonPopup(this)">Google Drive - Watch/Download - 0.00GB</a>
-        <a class="btn mega" href="javascript:void(0)" onclick="openSoonPopup(this)">Mega Nz - Watch/Download - 0.00GB</a>
+        <a class="btn drive" href="https://gplinks.co/baCB">Google Drive - Watch/Download - 9.53GB</a>
+        <a class="btn mega" href="https://gplinks.co/IThl">Mega Nz - Watch/Download - 9.53GB</a>
       </div>
     </div>
 
@@ -449,24 +417,24 @@
     <div class="ep">
       <h3>480p AAC 2.0 AVC</h3>
       <div class="btns">
-        <a class="btn drive" href="javascript:void(0)" onclick="openSoonPopup(this)">Google Drive - Watch/Download - 0.00GB</a>
-        <a class="btn mega" href="javascript:void(0)" onclick="openSoonPopup(this)">Mega Nz - Watch/Download - 0.00GB</a>
+        <a class="btn drive" href="https://gplinks.co/yp71E0o">Google Drive - Watch/Download - 1.47GB</a>
+        <a class="btn mega" href="https://gplinks.co/GMVpq">Mega Nz - Watch/Download - 1.47GB</a>
       </div>
     </div>
 
     <div class="ep">
       <h3>720p AAC 2.0 AVC</h3>
       <div class="btns">
-        <a class="btn drive" href="javascript:void(0)" onclick="openSoonPopup(this)">Google Drive - Watch/Download - 0.00GB</a>
-        <a class="btn mega" href="javascript:void(0)" onclick="openSoonPopup(this)">Mega Nz - Watch/Download - 0.00GB</a>
+        <a class="btn drive" href="https://gplinks.co/cq3ZsCl">Google Drive - Watch/Download - 2.19GB</a>
+        <a class="btn mega" href="https://gplinks.co/i7ioju">Mega Nz - Watch/Download - 2.19GB</a>
       </div>
     </div>
 
     <div class="ep">
       <h3>1080p DDP 5.1 HEVC</h3>
       <div class="btns">
-        <a class="btn drive" href="javascript:void(0)" onclick="openSoonPopup(this)">Google Drive - Watch/Download - 0.00GB</a>
-        <a class="btn mega" href="javascript:void(0)" onclick="openSoonPopup(this)">Mega Nz - Watch/Download - 0.00GB</a>
+        <a class="btn drive" href="https://gplinks.co/bsw9BL3">Google Drive - Watch/Download - 5.84GB</a>
+        <a class="btn mega" href="https://gplinks.co/PIRytqy">Mega Nz - Watch/Download - 5.84GB</a>
       </div>
     </div>
 
@@ -521,19 +489,6 @@
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') goSearch();
     });
-  </script>
-  <script>
-  function openSoonPopup(el){
-    const popup = document.getElementById("soonPopup");
-    const rect = el.getBoundingClientRect();
-    popup.style.left = (window.scrollX + rect.left) + "px";
-    popup.style.top = (window.scrollY + rect.bottom + 8) + "px";
-    popup.style.display = "block";
-  }
-
-  function closeSoonPopup(){
-    document.getElementById("soonPopup").style.display = "none";
-  }
   </script>
 </body>
 </html>
