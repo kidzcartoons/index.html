@@ -523,5 +523,18 @@
       if (e.key === 'Enter') goSearch();
     });
   </script>
+  <script>
+  function openSoonPopup(el){
+    const popup = document.getElementById("soonPopup");
+    const rect = el.getBoundingClientRect();
+    popup.style.left = (window.scrollX + rect.left) + "px";
+    popup.style.top = (window.scrollY + rect.bottom + 8) + "px";
+    popup.style.display = "block";
+  }
+
+  function closeSoonPopup(){
+    document.getElementById("soonPopup").style.display = "none";
+  }
+  </script>
 </body>
 </html>
