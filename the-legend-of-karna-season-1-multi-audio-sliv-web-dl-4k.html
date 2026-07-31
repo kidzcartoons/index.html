@@ -113,6 +113,29 @@
     @media (min-width: 1200px){
       .poster{max-width:980px}
     }
+    .download-menu{position:relative}
+.menu-links{
+  display:none;
+  position:absolute;
+  top:56px;
+  left:0;
+  right:0;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 12px 28px rgba(0,0,0,.25);
+  z-index:20;
+}
+.menu-links a{
+  display:block;
+  padding:14px 16px;
+  color:#111;
+  font-weight:700;
+  text-decoration:none;
+  border-bottom:1px solid #e5e7eb;
+}
+.menu-links a:last-child{border-bottom:none}
+.menu-links a:hover{background:#f3f4f6}
   </style>
 </head>
 <body>
@@ -196,6 +219,16 @@
       </div>
     </div>
 
+    <div class="btns download-menu">
+  <button class="btn drive" type="button" onclick="toggleMenu('ep1menu')">Download Links</button>
+
+  <div class="menu-links" id="ep1menu">
+    <a href="https://gplinks.co/ThDW" target="_blank" rel="noopener noreferrer">1. Google Drive - 1080p HEVC - 523MB</a>
+    <a href="https://gplinks.co/URCuDMx3" target="_blank" rel="noopener noreferrer">2. Mega Nz - 1080p HEVC - 523MB</a>
+    <a href="https://example.com/link3" target="_blank" rel="noopener noreferrer">3. Server 3</a>
+  </div>
+</div>
+
     <p style="
   text-align:center;
   font-weight:bold;
@@ -245,6 +278,22 @@
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') doSearch();
     });
+  </script>
+  <script>
+function toggleMenu(id){
+  const menu = document.getElementById(id);
+  const all = document.querySelectorAll('.menu-links');
+  all.forEach(m => {
+    if (m !== menu) m.style.display = 'none';
+  });
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+document.addEventListener('click', function(e){
+  if (!e.target.closest('.download-menu')) {
+    document.querySelectorAll('.menu-links').forEach(m => m.style.display = 'none');
+  }
+});
   </script>
 </body>
 </html>
