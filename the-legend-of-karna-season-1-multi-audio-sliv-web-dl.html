@@ -113,6 +113,36 @@
     @media (min-width: 1200px){
       .poster{max-width:980px}
     }
+    .quality-btn{
+width:100%;
+padding:15px;
+margin-top:10px;
+background:linear-gradient(45deg,#ff4757,#ff6b81);
+border:none;
+border-radius:10px;
+color:#fff;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+}
+
+.quality-content{
+display:none;
+margin-top:15px;
+}
+
+.quality-content.show{
+display:block;
+}
+
+.episode-title{
+color:#fff;
+font-size:18px;
+font-weight:700;
+margin:18px 0 10px;
+padding-left:8px;
+border-left:4px solid #ff4757;
+  }
   </style>
 </head>
 <body>
@@ -181,22 +211,52 @@
     <div class="ep-title">SEASON 1</div>
 
     <div class="ep">
-      <h3>01. A New Neighbor</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/GX2kWY">Google Drive - Watch/Download - 1080p HEVC - 281MB</a>
-        <a class="btn mega" href="https://gplinks.co/QOrZtc">Mega Nz - Watch/Download - 1080p HEVC - 281MB</a>
-        <a class="btn tg" href="https://gplinks.co/X4OtBq">Telegram - Watch/Download - 1080p HEVC - 281MB</a>
-      </div>
-    </div>
 
-    <div class="ep">
-      <h3>02. Angry Bird</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/f78Pieh">Google Drive - Watch/Download - 1080p HEVC - 231MB</a>
-        <a class="btn mega" href="https://gplinks.co/eDonf">Mega Nz - Watch/Download - 1080p HEVC - 231MB</a>
-        <a class="btn tg" href="https://gplinks.co/gSiVbW">Telegram - Watch/Download - 1080p HEVC - 231MB</a>
-      </div>
-    </div>
+<button class="quality-btn" onclick="toggleQuality()">
+1080p SLIV WEB-DL (HEVC) +
+</button>
+
+<div class="quality-content" id="qualityBox">
+
+<div class="episode-title">
+01. A New Neighbor
+</div>
+
+<div class="btns">
+<a class="btn drive" href="https://gplinks.co/GX2kWY">
+Google Drive - Watch/Download - 281MB
+</a>
+
+<a class="btn mega" href="https://gplinks.co/QOrZtc">
+Mega NZ - Watch/Download - 281MB
+</a>
+
+<a class="btn tg" href="https://gplinks.co/X4OtBq">
+Telegram - Watch/Download - 281MB
+</a>
+</div>
+
+<div class="episode-title">
+02. Angry Bird
+</div>
+
+<div class="btns">
+<a class="btn drive" href="https://gplinks.co/f78Pieh">
+Google Drive - Watch/Download - 231MB
+</a>
+
+<a class="btn mega" href="https://gplinks.co/eDonf">
+Mega NZ - Watch/Download - 231MB
+</a>
+
+<a class="btn tg" href="https://gplinks.co/gSiVbW">
+Telegram - Watch/Download - 231MB
+</a>
+</div>
+
+</div>
+
+</div>
 
     <p style="
   text-align:center;
@@ -247,6 +307,15 @@
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') doSearch();
     });
+  </script>
+  <script>
+function toggleQuality(){
+
+document
+.getElementById("qualityBox")
+.classList.toggle("show");
+
+}
   </script>
 </body>
 </html>
