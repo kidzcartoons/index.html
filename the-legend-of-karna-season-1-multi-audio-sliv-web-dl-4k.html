@@ -212,11 +212,11 @@ border-left:4px solid #ff4757;
 
     <div class="ep">
 
-<button class="quality-btn" onclick="toggleQuality()">
+<button class="quality-btn" onclick="toggleQuality(this)">
 540p AAC 2.0 SLIV WEB-DL (AVC)
 </button>
 
-<div class="quality-content" id="qualityBox">
+<div class="quality-content">
 
 <div class="episode-title">
 01. The Tournament
@@ -258,11 +258,11 @@ Telegram - Watch/Download - 231MB
 
     <div class="ep">
 
-<button class="quality-btn" onclick="toggleQuality()">
+<button class="quality-btn" onclick="toggleQuality(this)">
 720p DDPA 5.1 SLIV WEB-DL (HEVC)
 </button>
 
-<div class="quality-content" id="qualityBox">
+<div class="quality-content">
 
 <div class="episode-title">
 01. The Tournament
@@ -304,11 +304,11 @@ Telegram - Watch/Download - 231MB
 
     <div class="ep">
 
-<button class="quality-btn" onclick="toggleQuality()">
+<button class="quality-btn" onclick="toggleQuality(this)">
 720p DDPA 5.1 SLIV WEB-DL (AVC)
 </button>
 
-<div class="quality-content" id="qualityBox">
+<div class="quality-content">
 
 <div class="episode-title">
 01. The Tournament
@@ -350,11 +350,11 @@ Telegram - Watch/Download - 231MB
 
     <div class="ep">
 
-<button class="quality-btn" onclick="toggleQuality()">
+<button class="quality-btn" onclick="toggleQuality(this)">
 1080p DDPA 5.1 SLIV WEB-DL (HEVC)
 </button>
 
-<div class="quality-content" id="qualityBox">
+<div class="quality-content">
 
 <div class="episode-title">
 01. The Tournament
@@ -396,11 +396,11 @@ Telegram - Watch/Download - 231MB
 
     <div class="ep">
 
-<button class="quality-btn" onclick="toggleQuality()">
+<button class="quality-btn" onclick="toggleQuality(this)">
 1080p DDPA 5.1 SLIV WEB-DL (AVC)
 </button>
 
-<div class="quality-content" id="qualityBox">
+<div class="quality-content">
 
 <div class="episode-title">
 01. The Tournament
@@ -442,11 +442,11 @@ Telegram - Watch/Download - 231MB
 
     <div class="ep">
 
-<button class="quality-btn" onclick="toggleQuality()">
+<button class="quality-btn" onclick="toggleQuality(this)">
 2160p DDPA 5.1 SLIV WEB-DL (HEVC)
 </button>
 
-<div class="quality-content" id="qualityBox">
+<div class="quality-content">
 
 <div class="episode-title">
 01. The Tournament
@@ -537,12 +537,9 @@ Telegram - Watch/Download - 231MB
     });
   </script>
   <script>
-function toggleQuality(){
-
-document
-.getElementById("qualityBox")
-.classList.toggle("show");
-
+function toggleQuality(button){
+    const box = button.nextElementSibling;
+    box.classList.toggle("show");
 }
   </script>
 </body>
