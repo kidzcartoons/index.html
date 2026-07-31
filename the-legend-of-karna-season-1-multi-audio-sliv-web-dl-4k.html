@@ -113,29 +113,64 @@
     @media (min-width: 1200px){
       .poster{max-width:980px}
     }
-    .download-menu{position:relative}
-.menu-links{
-  display:none;
-  position:absolute;
-  top:56px;
-  left:0;
-  right:0;
-  background:#fff;
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 12px 28px rgba(0,0,0,.25);
-  z-index:20;
+    .server-box{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:15px;
 }
-.menu-links a{
-  display:block;
-  padding:14px 16px;
-  color:#111;
-  font-weight:700;
-  text-decoration:none;
-  border-bottom:1px solid #e5e7eb;
+
+.server{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px;
+    border-radius:12px;
+    color:#fff;
+    font-weight:700;
+    transition:.25s;
 }
-.menu-links a:last-child{border-bottom:none}
-.menu-links a:hover{background:#f3f4f6}
+
+.server:hover{
+    transform:translateY(-3px);
+}
+
+.server .icon{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,.18);
+    font-size:20px;
+    flex-shrink:0;
+}
+
+.server .text{
+    font-size:13px;
+    line-height:1.4;
+}
+
+.drive{
+    background:#28a745;
+}
+
+.mega{
+    background:#00bcd4;
+}
+
+.telegram{
+    background:#7b2ff7;
+}
+
+@media(max-width:700px){
+
+.server-box{
+grid-template-columns:1fr;
+}
+
+}
   </style>
 </head>
 <body>
@@ -221,14 +256,36 @@
       </div>
     </div>
 
-    <div class="btns download-menu">
-  <button class="btn drive" type="button" onclick="toggleMenu('ep1menu')">Download Links</button>
+    <div class="ep">
+    <h3>01. One Year Later…</h3>
 
-  <div class="menu-links" id="ep1menu">
-    <a href="https://gplinks.co/ThDW" target="_blank" rel="noopener noreferrer">1. Google Drive - 1080p HEVC - 523MB</a>
-    <a href="https://gplinks.co/URCuDMx3" target="_blank" rel="noopener noreferrer">2. Mega Nz - 1080p HEVC - 523MB</a>
-    <a href="https://example.com/link3" target="_blank" rel="noopener noreferrer">3. Server 3</a>
-  </div>
+    <div class="server-box">
+
+        <a href="https://gplinks.co/ThDW" class="server drive">
+            <span class="icon">G</span>
+            <span class="text">
+                <b>Drive</b><br>
+                1080p • 523MB
+            </span>
+        </a>
+
+        <a href="https://gplinks.co/URCuDMx3" class="server mega">
+            <span class="icon">M</span>
+            <span class="text">
+                <b>Mega</b><br>
+                1080p • 523MB
+            </span>
+        </a>
+
+        <a href="https://gplinks.co/URCuDMx3" class="server telegram">
+            <span class="icon"><i class="fab fa-telegram-plane"></i></span>
+            <span class="text">
+                <b>Telegram</b><br>
+                1080p • 523MB
+            </span>
+        </a>
+
+    </div>
 </div>
 
     <p style="
@@ -280,22 +337,6 @@
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') doSearch();
     });
-  </script>
-  <script>
-function toggleMenu(id){
-  const menu = document.getElementById(id);
-  const all = document.querySelectorAll('.menu-links');
-  all.forEach(m => {
-    if (m !== menu) m.style.display = 'none';
-  });
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-}
-
-document.addEventListener('click', function(e){
-  if (!e.target.closest('.download-menu')) {
-    document.querySelectorAll('.menu-links').forEach(m => m.style.display = 'none');
-  }
-});
   </script>
 </body>
 </html>
