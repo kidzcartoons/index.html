@@ -1,6 +1,6 @@
 const linksDB = {
   '9v3EHVbg': 'https://gplinks.co/Y8WPef1F',
-  'JPlv': 'https://gplinks.co/JPlv',
+  'DuCF93bt': 'https://gplinks.co/Y8WPef1F?skip_sub=1',
   'XPdgBN': 'https://gplinks.co/XPdgBN',
   'P2APl': 'https://gplinks.co/P2APl'
 };
