@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Shortener</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            color: white;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        h1 { text-align: center; margin-bottom: 2rem; font-size: 2rem; }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+        }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        button:hover { background: #45a049; }
+        .result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            display: none;
+        }
+        .result.show { display: block; }
+        .link-box {
+            background: white;
+            color: #333;
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-family: monospace;
+            word-break: break-all;
+            margin-bottom: 1rem;
+        }
+        .copy-btn { background: #2196F3; padding: 0.5rem 1rem; }
+        .copy-btn:hover { background: #1976D2; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Link Shortener</h1>
+        
+        <div class="card" id="passwordSection">
+            <div class="form-group">
+                <label>Enter Password:</label>
+                <input type="password" id="passwordInput" placeholder="Enter admin password">
+            </div>
+            <button onclick="checkPassword()">Login</button>
+        </div>
+        
+        <div class="card hidden" id="mainForm">
+            <div class="form-group">
+                <label>GPLinks URL:</label>
+                <input type="url" id="gplinkInput" placeholder="https://gplinks.co/xyz123">
+            </div>
+            <button onclick="generateShortLink()">Generate Short Link</button>
+            <div class="result" id="result">
+                <h3>✅ Token Generated:</h3>
+                <div class="link-box" id="tokenDisplay"></div>
+                <button class="copy-btn" onclick="copyToken()">Copy Token</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ADMIN_PASSWORD = '1982youtuber171';
+        
+        function checkPassword() {
+            const password = document.getElementById('passwordInput').value;
+            if (password === ADMIN_PASSWORD) {
+                document.getElementById('passwordSection').classList.add('hidden');
+                document.getElementById('mainForm').classList.remove('hidden');
+            } else {
+                alert('Wrong password!');
+            }
+        }
+        
+        function generateToken() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let token = '';
+            for (let i = 0; i < 8; i++) {
+                token += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return token;
+        }
+        
+        function generateShortLink() {
+            const gplink = document.getElementById('gplinkInput').value.trim();
+            if (!gplink || !gplink.includes('gplinks.co')) {
+                alert('Please enter a valid GPLinks URL!');
+                return;
+            }
+            const token = generateToken();
+            const baseUrl = window.location.origin;
+            const shortUrl = `${baseUrl}/redirect.html?token=${token}`;
+            
+            document.getElementById('tokenDisplay').innerHTML = `
+                <strong>Token:</strong> ${token}<br>
+                <strong>GPLink:</strong> ${gplink}<br>
+                <strong>Protected URL:</strong> ${shortUrl}
+            `;
+            document.getElementById('result').classList.add('show');
+            document.getElementById('gplinkInput').value = '';
+        }
+        
+        function copyToken() {
+            const text = document.getElementById('tokenDisplay').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied!');
+            });
+        }
+    </script>
+</body>
+</html>
