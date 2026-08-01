@@ -1,5 +1,5 @@
 const linksDB = {
-  'nvCc6YT': 'https://gplinks.co/nvCc6YT',
+  '9v3EHVbg': 'https://gplinks.co/Y8WPef1F',
   'JPlv': 'https://gplinks.co/JPlv',
   'XPdgBN': 'https://gplinks.co/XPdgBN',
   'P2APl': 'https://gplinks.co/P2APl'
