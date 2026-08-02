@@ -13,7 +13,6 @@ const linksDB = {
   'bd751fdcb72448b3': 'https://gplinks.co/h4zP3V?skip_sub=1',
   '34c1103f3c374fc8': 'https://gplinks.co/vqDh8?skip_sub=1',
   '761af2b161504db3': 'https://gplinks.co/k4hyQSR?skip_sub=1',
-  '80a5394d760d4c42': 'https://gplinks.co/3P9SP?skip_sub=1',
   'c9e92c8837d2425a': 'https://gplinks.co/sgJp6?skip_sub=1',
   'b927c634902f491b': 'https://gplinks.co/wC4z2?skip_sub=1',
   '913e50c527dd42fe': 'https://gplinks.co/njPSTZCv?skip_sub=1',
