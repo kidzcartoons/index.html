@@ -94,7 +94,7 @@
 
     <script>
         const ADMIN_PASSWORD = '1982youtuber171';
-        
+
         function checkPassword() {
             const password = document.getElementById('passwordInput').value;
             if (password === ADMIN_PASSWORD) {
@@ -104,26 +104,26 @@
                 alert('Wrong password!');
             }
         }
-        
-        function generateToken() {
-            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+        function generateToken(length = 16) {
             let token = '';
-            for (let i = 0; i < 8; i++) {
-                token += chars.charAt(Math.floor(Math.random() * chars.length));
+            while (token.length < length) {
+                token += crypto.randomUUID().replace(/-/g, '');
             }
-            return token;
+            return token.slice(0, length);
         }
-        
+
         function generateShortLink() {
             const gplink = document.getElementById('gplinkInput').value.trim();
             if (!gplink || !gplink.includes('gplinks.co')) {
                 alert('Please enter a valid GPLinks URL!');
                 return;
             }
-            const token = generateToken();
+
+            const token = generateToken(16);
             const baseUrl = window.location.origin;
             const shortUrl = `${baseUrl}/redirect.html?token=${token}`;
-            
+
             document.getElementById('tokenDisplay').innerHTML = `
                 <strong>Token:</strong> ${token}<br>
                 <strong>GPLink:</strong> ${gplink}<br>
@@ -132,7 +132,7 @@
             document.getElementById('result').classList.add('show');
             document.getElementById('gplinkInput').value = '';
         }
-        
+
         function copyToken() {
             const text = document.getElementById('tokenDisplay').textContent;
             navigator.clipboard.writeText(text).then(() => {
