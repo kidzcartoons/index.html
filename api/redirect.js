@@ -92,6 +92,12 @@ const linksDB = {
   '46b9ac4ec10f42bd': 'https://gplinks.co/zUuru?skip_sub=1',
   '46ea088247ee454f': 'https://gplinks.co/zTJL?skip_sub=1',
   'bc574782dfed447f': 'https://gplinks.co/jIX89?skip_sub=1',
+  '0263c7e7e7d847bc': 'https://gplinks.co/sGCi1?skip_sub=1',
+  '9ff47ee224fb4f3e': 'https://gplinks.co/1MkEbQEc?skip_sub=1',
+  'ea3e58d89bd24459': 'https://gplinks.co/Dn0aPNp?skip_sub=1',
+  
+  '0263c7e7e7d847bc': 'https://gplinks.co/sGCi1?skip_sub=1',
+  '0263c7e7e7d847bc': 'https://gplinks.co/sGCi1?skip_sub=1',
   '0263c7e7e7d847bc': 'https://gplinks.co/sGCi1?skip_sub=1'
 };
 
