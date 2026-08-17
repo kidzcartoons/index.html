@@ -250,6 +250,41 @@ const linksDB = {
   'ed612fe6e2e2403b': 'https://gplinks.co/1hf2sZ0?skip_sub=1'
 };
 
+// Duplicate checker
+const entries = Object.entries(linksDB);
+
+const tokenMap = new Map();
+const urlMap = new Map();
+
+for (const [token, url] of entries) {
+  if (tokenMap.has(token)) {
+    console.error("❌ DUPLICATE TOKEN:", token);
+  } else {
+    tokenMap.set(token, url);
+  }
+
+  if (urlMap.has(url)) {
+    console.error(
+      "❌ DUPLICATE URL:",
+      url,
+      "\nFirst token:",
+      urlMap.get(url),
+      "\nSecond token:",
+      token
+    );
+  } else {
+    urlMap.set(url, token);
+  }
+}
+
+console.log("Total entries:", entries.length);
+console.log("Unique tokens:", tokenMap.size);
+console.log("Unique URLs:", urlMap.size);
+
+if (entries.length === tokenMap.size && entries.length === urlMap.size) {
+  console.log("✅ No duplicate tokens or URLs!");
+}
+
 export default function handler(req, res) {
   const { token } = req.query;
   if (linksDB[token]) {
