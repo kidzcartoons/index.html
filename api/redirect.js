@@ -371,7 +371,15 @@ const linksDB = {
   'e0abb1eb5d04411e': 'https://gplinks.co/4RP8pzg?skip_sub=1',
   '3d571de78587401e': 'https://gplinks.co/4BgJmt?skip_sub=1',
   '29fd9aa0b98e44ad': 'https://gplinks.co/51cC05?skip_sub=1',
-  '4d4d0d6f4e794b30': 'https://gplinks.co/SRgx?skip_sub=1'
+  '4d4d0d6f4e794b30': 'https://gplinks.co/SRgx?skip_sub=1',
+  '1f04c60642324d13': 'https://gplinks.co/d74VZ?skip_sub=1',
+  'bf0ea9c3ead2471e': 'https://gplinks.co/09kQtJ?skip_sub=1',
+  '40d22d1e70a64a5b': 'https://gplinks.co/WT33GvjW?skip_sub=1',
+  '824ae115a0a84742': 'https://gplinks.co/5c86pYp?skip_sub=1',
+  'd3dd140466564079': 'https://gplinks.co/E3R8gds?skip_sub=1',
+  '32bacef1668c4fb6': 'https://gplinks.co/4Oe9ehZV?skip_sub=1',
+  '0264b5780d5f41d1': 'https://gplinks.co/fWOpTsF?skip_sub=1',
+  'ad055a77f41b4c23': 'https://gplinks.co/NxMn?skip_sub=1'
 };
 
 export default function handler(req, res) {
