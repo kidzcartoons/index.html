@@ -530,7 +530,20 @@ const linksDB = {
   '6183738bdd5f461a': 'https://gplinks.co/PrRSFF?skip_sub=1',
   '2db9f2b5fdf34a63': 'https://gplinks.co/LCwdQ0KV?skip_sub=1',
   '14643673b7d44cd2': 'https://gplinks.co/LHZV8?skip_sub=1',
-  '105750e6b2e24b00': 'https://gplinks.co/iDXcJXCR?skip_sub=1'
+  '105750e6b2e24b00': 'https://gplinks.co/iDXcJXCR?skip_sub=1',
+  'c0693daf005649c4': 'https://gplinks.co/GFVFMB8?skip_sub=1',
+  '8b82d73018ad4018': 'https://gplinks.co/9s6aEB?skip_sub=1',
+  'd7b718f50eba44f1': 'https://gplinks.co/ZMYMQt?skip_sub=1',
+  'bb97cf882b25456f': 'https://gplinks.co/peHt6?skip_sub=1',
+  '42212448daf14458': 'https://gplinks.co/pz43wRD?skip_sub=1',
+  '1a9029ac0c4a4c0f': 'https://gplinks.co/7I9AA?skip_sub=1',
+  '3b68ba241a1f49ab': 'https://gplinks.co/9ajMfod?skip_sub=1',
+  '0bbc4e635fc04e92': 'https://gplinks.co/rVzk3Cw7?skip_sub=1',
+  '699c262a61be46ff': 'https://gplinks.co/KRFQ?skip_sub=1',
+  '9769b9851caa4e28': 'https://gplinks.co/Z1iBxbG?skip_sub=1',
+  'c605746c8bac44da': 'https://gplinks.co/HcLDU7M?skip_sub=1',
+  'bbbc11650e134f03': 'https://gplinks.co/TrDn6XK?skip_sub=1',
+  '6769abe58e5347e2': 'https://gplinks.co/fNdAv?skip_sub=1'
 };
 
 export default function handler(req, res) {
