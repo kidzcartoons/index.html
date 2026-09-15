@@ -90,6 +90,7 @@
     .btn:hover{transform:translateY(-2px)}
     .drive{background:linear-gradient(45deg,#1e88e5,#42a5f5)}
     .mega{background:linear-gradient(45deg,#ff5252,#ff7043)}
+    .tg{background:linear-gradient(45deg,#7B2FF7,#B06AF9)}
     .howto{margin-top:18px;border-radius:12px;overflow:hidden;border:1px solid #2b2b2b;background:#10131a}
     .howto a{display:block;padding:16px;color:#66a6ff;font-weight:800;text-align:center}
     .footer{margin-top:26px;background:linear-gradient(135deg,#111,#0a0a0a);border-top:2px solid #ff4757;padding:22px 15px 26px;text-align:center}
@@ -112,6 +113,36 @@
     @media (min-width: 1200px){
       .poster{max-width:980px}
     }
+    .quality-btn{
+width:100%;
+padding:15px;
+margin-top:10px;
+background:linear-gradient(45deg,#202020,#ff4757);
+border:1px solid #ff4757;
+border-radius:10px;
+color:#fff;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+}
+
+.quality-content{
+display:none;
+margin-top:15px;
+}
+
+.quality-content.show{
+display:block;
+}
+
+.episode-title{
+color:#fff;
+font-size:18px;
+font-weight:700;
+margin:18px 0 10px;
+padding-left:8px;
+border-left:4px solid #ff4757;
+  }
   </style>
 </head>
 <body>
@@ -151,6 +182,7 @@
         <tr><td>Quality</td><td>480p SD CR WEB-DL (AVC)</td></tr>
         <tr><td>Language</td><td>Hindi  -  Tamil  -  Telugu  -  English (AAC 2.0 - 128kpbs)</td></tr>
         <tr><td>Duration</td><td>23 Minutes (Per Episode)</td></tr>
+        <tr><td>Size</td><td>200MB (Each Episode)</td></tr>
         <tr><td>OTT</td><td>Crunchyroll</td></tr>
         <tr><td>Uploader</td><td>Atoz Cartoons Premium</td></tr>
       </table>
@@ -175,215 +207,53 @@
       </div>
     </div>
 
-    <div class="ep-title">SEASON 1</div>
+    <div class="ep-title">SPECIAL</div>
 
     <div class="ep">
-      <h3>01. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
 
-    <div class="ep">
-      <h3>02. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
+<button class="quality-btn" onclick="toggleQuality(this)">
+480p CR WEB-DL (AVC)
+</button>
 
-    <div class="ep">
-      <h3>03. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
+<div class="quality-content">
 
-    <div class="ep">
-      <h3>04. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
+<div class="episode-title">
+EPISODES 01-13
+</div>
 
-    <div class="ep">
-      <h3>05. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
+<div class="btns">
+<a class="btn drive" href="https://atozcartoonspremium.vercel.app/redirect.html?token=4dbdb418c5c64e51">
+Google Drive - Watch/Download
+</a>
 
-    <div class="ep">
-      <h3>06. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
+<a class="btn mega" href="https://atozcartoonspremium.vercel.app/redirect.html?token=7c20105c82514547">
+Mega Nz - Watch/Download
+</a>
 
-    <div class="ep">
-      <h3>07. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
+<a class="btn tg" href="https://atozcartoonspremium.vercel.app/redirect.html?token=bd8346a034ea4f8c">
+Telegram - Watch/Download
+</a>
+</div>
 
-    <div class="ep">
-      <h3>08. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
+  <div class="episode-title">
+EPISODES 14-26
+</div>
 
-    <div class="ep">
-      <h3>09. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
+<div class="btns">
+<a class="btn drive" href="https://atozcartoonspremium.vercel.app/redirect.html?token=1b0ed3faa83647cb">
+Google Drive - Watch/Download
+</a>
 
-    <div class="ep">
-      <h3>10. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
+<a class="btn mega" href="https://atozcartoonspremium.vercel.app/redirect.html?token=5a53b453f0524e25">
+Mega Nz - Watch/Download
+</a>
 
-    <div class="ep">
-      <h3>11. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>12. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>13. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>14. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>15. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>16. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>17. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>18. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>19. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>20. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>21. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>22. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>23. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>24. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>25. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
-
-    <div class="ep">
-      <h3>26. Enter: Naruto Uzumaki!</h3>
-      <div class="btns">
-        <a class="btn drive" href="https://gplinks.co/PdziKLn">Google Drive - Watch/Download - 1080p AVC - 425MB</a>
-        <a class="btn mega" href="https://gplinks.co/CaipjB">Mega Nz - Watch/Download - 1080p AVC - 425MB</a>
-      </div>
-    </div>
+<a class="btn tg" href="https://atozcartoonspremium.vercel.app/redirect.html?token=708c681648be4795">
+Telegram - Watch/Download
+</a>
+</div>
+</div>
+</div>
 
     <p style="
   text-align:center;
@@ -434,6 +304,12 @@
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') doSearch();
     });
+  </script>
+  <script>
+function toggleQuality(button){
+    const box = button.nextElementSibling;
+    box.classList.toggle("show");
+}
   </script>
 </body>
 </html>
