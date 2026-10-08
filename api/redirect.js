@@ -1279,7 +1279,11 @@ const linksDB = {
   '3dbea01f6a1140d3': 'https://gplinks.co/EVz5rPso?skip_sub=1',
   'ddbcf9571e514401': 'https://gplinks.co/iefonoF?skip_sub=1',
   '8d38b9b4cc754b07': 'https://gplinks.co/lajjy8H?skip_sub=1',
-  'f612b77ce71148a5': 'https://gplinks.co/VzZkX?skip_sub=1'
+  'f612b77ce71148a5': 'https://gplinks.co/VzZkX?skip_sub=1',
+  'e9656bb3f2d347ea': 'https://gplinks.co/nZboFk8O?skip_sub=1',
+  'a51679777e604a3a': 'https://gplinks.co/jDwKIQ51?skip_sub=1',
+  'e4dfda9614794f68': 'https://gplinks.co/icc2ZNK?skip_sub=1',
+  '3bc2dc1fbc834050': 'https://gplinks.co/CxX3PoU?skip_sub=1'
 };
 
 export default function handler(req, res) {
