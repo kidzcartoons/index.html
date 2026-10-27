@@ -1568,6 +1568,9 @@ const linksDB = {
   'f345a97a8c8b4b31': 'https://gplinks.co/XBZNFX5?skip_sub=1',
   '372c5bbc68864a4d': 'https://gplinks.co/Vq1VK?skip_sub=1',
   '3b851e0cbce74e38': 'https://gplinks.co/NwMKhE?skip_sub=1',
+  '7e209bb44c6047e8': 'https://gplinks.co/S1pNh?skip_sub=1',
+  'ae80ba8c9aed4d35': 'https://gplinks.co/dub5o6T?skip_sub=1',
+  '5922fcf827c345b2': 'https://gplinks.co/jdwBP?skip_sub=1', 
   
   '2ad9d29ac5cb4d5e': 'https://gplinks.co/C6p3vYG?skip_sub=1'
 };
