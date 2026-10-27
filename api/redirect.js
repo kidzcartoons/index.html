@@ -1562,6 +1562,12 @@ const linksDB = {
   '83de18113dcd46f6': 'https://gplinks.co/V4M9KjfK?skip_sub=1',
   '83110e2cb9e448ca': 'https://gplinks.co/k35abZ?skip_sub=1',
   '8928b8a3703444d1': 'https://gplinks.co/eI6VtgD?skip_sub=1',
+  'ff2a83b464154f48': 'https://gplinks.co/LmBz7Mr?skip_sub=1',
+  'eec84d6d41344159': 'https://gplinks.co/lCyHj2d?skip_sub=1',
+  '90a810bb4bcd4114': 'https://gplinks.co/5TN1zfJA?skip_sub=1',
+  'f345a97a8c8b4b31': 'https://gplinks.co/XBZNFX5?skip_sub=1',
+  '372c5bbc68864a4d': 'https://gplinks.co/Vq1VK?skip_sub=1',
+  '3b851e0cbce74e38': 'https://gplinks.co/NwMKhE?skip_sub=1',
   
   '2ad9d29ac5cb4d5e': 'https://gplinks.co/C6p3vYG?skip_sub=1'
 };
