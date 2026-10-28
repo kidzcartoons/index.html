@@ -1570,7 +1570,13 @@ const linksDB = {
   '3b851e0cbce74e38': 'https://gplinks.co/NwMKhE?skip_sub=1',
   '7e209bb44c6047e8': 'https://gplinks.co/S1pNh?skip_sub=1',
   'ae80ba8c9aed4d35': 'https://gplinks.co/dub5o6T?skip_sub=1',
-  '5922fcf827c345b2': 'https://gplinks.co/jdwBP?skip_sub=1', 
+  '5922fcf827c345b2': 'https://gplinks.co/jdwBP?skip_sub=1',
+  '29fecbab64e244fa': 'https://gplinks.co/8ZARwLQ8?skip_sub=1',
+  '87f4d0845c064592': 'https://gplinks.co/andAkf?skip_sub=1',
+  'cbde098e7e5b47a5': 'https://gplinks.co/40LNJUVb?skip_sub=1',
+  'a41cad5608a14e76': 'https://gplinks.co/I7iZB?skip_sub=1',
+  'b00c9fc325144d7f': 'https://gplinks.co/Cmpnm?skip_sub=1',
+  'b89c935d8a43469f': 'https://gplinks.co/6nLPhupa?skip_sub=1',
   
   '2ad9d29ac5cb4d5e': 'https://gplinks.co/C6p3vYG?skip_sub=1'
 };
