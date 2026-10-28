@@ -1577,7 +1577,14 @@ const linksDB = {
   'a41cad5608a14e76': 'https://gplinks.co/I7iZB?skip_sub=1',
   'b00c9fc325144d7f': 'https://gplinks.co/Cmpnm?skip_sub=1',
   'b89c935d8a43469f': 'https://gplinks.co/6nLPhupa?skip_sub=1',
-  
+  '82eeca0413604307': 'https://gplinks.co/SkPXci?skip_sub=1',
+  '0d2b0b98c6b54b10': 'https://gplinks.co/C6p3vYG?skip_sub=1',
+  '9885acf148464929': 'https://gplinks.co/dZvvBMyh?skip_sub=1',
+  '2799d7bd29f548ba': 'https://gplinks.co/IduDnw?skip_sub=1',
+  'd4eb2e9472d34d0b': 'https://gplinks.co/TtnbSQL?skip_sub=1',
+  '834aaad7fa4f4573': 'https://gplinks.co/s0T6K?skip_sub=1',
+  '605f5b8746ac4b78': 'https://gplinks.co/JaOQQ?skip_sub=1',
+ 
   '2ad9d29ac5cb4d5e': 'https://gplinks.co/C6p3vYG?skip_sub=1'
 };
 
