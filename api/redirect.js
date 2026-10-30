@@ -1614,7 +1614,9 @@ const linksDB = {
   'be818d3274e449b6': 'https://gplinks.co/yp4sv1op?skip_sub=1',
   'b4d5f08b2ba24622': 'https://gplinks.co/hNz37D6N?skip_sub=1',
   'a6b6dfd337ad4d3d': 'https://gplinks.co/XcLngx?skip_sub=1',
-  'd30ce8d35af446e5': 'https://gplinks.co/zNla2?skip_sub=1'
+  'd30ce8d35af446e5': 'https://gplinks.co/zNla2?skip_sub=1',
+  'f5fd3dbc0c364dd2': 'https://gplinks.co/hKlZxfD?skip_sub=1',
+  '398a0716964d4d05': 'https://gplinks.co/iwJzEYL?skip_sub=1'
 };
 
 export default function handler(req, res) {
