@@ -1836,7 +1836,8 @@ const linksDB = {
   'ca983710333b4ed2': 'https://gplinks.co/XEVxX1t?skip_sub=1',
   'c6d1e12b624d4662': 'https://gplinks.co/3Yloy?skip_sub=1',
   '0ed5a68b989f4d8a': 'https://gplinks.co/l3xpmFgJ?skip_sub=1',
-  '0ff23e09503d4c2a': 'https://gplinks.co/BNvTTe?skip_sub=1'
+  '0ff23e09503d4c2a': 'https://gplinks.co/BNvTTe?skip_sub=1',
+  '87e00c4d82464063': 'https://gplinks.co/v6aYgrx?skip_sub=1'
 };
 
 export default function handler(req, res) {
