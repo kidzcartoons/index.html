@@ -2010,7 +2010,9 @@ const linksDB = {
   '753ebef96d0f43f0': 'https://gplinks.co/aBu3b?skip_sub=1',
   'aa694c5682ca4341': 'https://gplinks.co/3Qjy?skip_sub=1',
   '161b48a9cce94865': 'https://gplinks.co/lZ0U3SI?skip_sub=1',
-  '4c691d2aa5184d7a': 'https://gplinks.co/rNIWa?skip_sub=1'
+  '4c691d2aa5184d7a': 'https://gplinks.co/rNIWa?skip_sub=1',
+  '444f27eb71614a11': 'https://gplinks.co/9VAs88h?skip_sub=1',
+  '399ac3ee055c4bfc': 'https://gplinks.co/b7uJ8e?skip_sub=1'
 };
 
 export default function handler(req, res) {
