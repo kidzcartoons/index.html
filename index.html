@@ -685,7 +685,7 @@
     }
 
     function renderPage(page){
-      const perPage = 12;
+      const perPage = 24;
       const total = filteredPosts.length;
       const totalPages = Math.max(1, Math.ceil(total / perPage));
       const safePage = Math.min(page, totalPages);
